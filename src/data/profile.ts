@@ -4,7 +4,7 @@
  *
  * ┌─────────────────────────────────────────────────────────────┐
  * │ TODO(you): fill in the social URLs marked `''` below.        │
- * │ TODO(you): drop a real CV at site/public/CV.pdf             │
+ * │ TODO(you): CV lives at public/Dharsan-Kesavan-CV.pdf        │
  * └─────────────────────────────────────────────────────────────┘
  */
 
@@ -17,7 +17,7 @@ export const profile = {
     'I build at the seam between {life science} and {systems software} — from a {Rust}-core spaced-repetition app to an {ML}-driven drug-interaction engine.',
   location: 'Arizona, USA',
   email: 'contactdharsan@gmail.com',
-  cvPath: '/CV.pdf', // place the file at site/public/CV.pdf
+  cvPath: '/Dharsan-Kesavan-CV.pdf', // name-bearing filename → engines associate the PDF with the person
   // Hero portrait — lives in site/public/. Cinematically graded to match the dark red/pink theme.
   portraitPath: '/portrait.jpg',
   portraitAlt: 'Dharsan Kesavan',
@@ -250,7 +250,7 @@ export const projects: Project[] = [
     name: 'Avorio',
     blurb: 'Native spaced-repetition app',
     description:
-      'A cross-platform flashcard app built on the FSRS-5 algorithm — algorithmically rigorous and genuinely pleasant to use, filling the gap between Anki (powerful but dated) and Quizlet (polished but algorithmically weak). One shared Rust core drives macOS, iOS, and Android; platform UIs are pure presentation calling through a UniFFI-generated facade.',
+      'Avorio is a cross-platform spaced-repetition flashcard app built on the FSRS-5 algorithm — algorithmically rigorous and genuinely pleasant to use, filling the gap between Anki (powerful but dated) and Quizlet (polished but algorithmically weak). One shared Rust core drives macOS, iOS, and Android; platform UIs are pure presentation calling through a UniFFI-generated facade.',
     status: 'In development · macOS & iOS ~87%',
     featured: true,
     href: 'https://avorio.ai',
@@ -266,7 +266,7 @@ export const projects: Project[] = [
     name: 'BioPath',
     blurb: 'Drug-interaction & body-impact engine',
     description:
-      '“I have this compound — what will it do to my body, and is it safe with what I’m already taking?” BioPath stitches together a dozen specialized scientific databases that each speak a different language, running the full resolution chain automatically from a drug name, a plant photo, a plant name, or a pill imprint.',
+      'BioPath is a drug-interaction and body-impact engine. “I have this compound — what will it do to my body, and is it safe with what I’m already taking?” It stitches together a dozen specialized scientific databases that each speak a different language, running the full resolution chain automatically from a drug name, a plant photo, a plant name, or a pill imprint.',
     status: 'Live',
     featured: true,
     href: 'https://biopath.space',
@@ -310,6 +310,40 @@ export const education = {
   coursework: ['Biomedical Sciences', 'AI in Business', 'Biochemistry', 'Human Physiology', 'Entrepreneurship & Innovation'],
   testing: [{ test: 'SAT', score: '1530', percentile: '~99th' }],
 } as const;
+
+/* ============================================================
+   In brief — third-person, self-contained Q&A (answer-engine friendly)
+   ------------------------------------------------------------
+   Each answer is a single citable sentence: subject + claim, no pronoun-
+   dependent context, the exact name "Dharsan Kesavan" early. This is the
+   surface AI assistants quote when asked "Who is Dharsan Kesavan?".
+   NOTE: rendered as VISIBLE prose only — deliberately NOT marked up as
+   FAQPage/QAPage JSON-LD (Google removed FAQ rich results for non-gov/health
+   sites in 2023, and AI engines extract from visible text, not the markup).
+   ============================================================ */
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export const faq: FaqItem[] = [
+  {
+    q: 'Who is Dharsan Kesavan?',
+    a: "Dharsan Kesavan is a bioengineer and software builder, and a student in Arizona State University's inaugural McKenna (MLSBE) cohort pursuing dual degrees in Biomedical Sciences and AI in Business.",
+  },
+  {
+    q: 'What is Avorio?',
+    a: 'Avorio is a cross-platform spaced-repetition flashcard app built by Dharsan Kesavan on the FSRS-5 algorithm, with one shared Rust core driving native macOS, iOS, and Android apps.',
+  },
+  {
+    q: 'What is BioPath?',
+    a: "BioPath is a machine-learning drug-interaction and body-impact engine built by Dharsan Kesavan that resolves a compound's identity, biological targets, pathways, organ impact, and safety across a dozen scientific databases.",
+  },
+  {
+    q: 'What does Dharsan Kesavan study and build?',
+    a: 'Dharsan Kesavan studies biomedical sciences and AI on a pre-medical track while building production software — shadowing in nephrology and volunteering in hospital care alongside Rust, Swift, and machine-learning projects.',
+  },
+];
 
 /* ============================================================
    Section nav (anchors)

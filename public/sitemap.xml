@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- <lastmod> values are refreshed to the build date by scripts/prerender.mjs. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dharsankesavan.com/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dharsankesavan.com/Dharsan-Kesavan-CV.pdf</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -8,6 +8,7 @@ import { Skills } from './sections/Skills';
 import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
 import { Stats } from './sections/Stats';
+import { Faq } from './sections/Faq';
 import { Contact } from './sections/Contact';
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Stats />
+        <Faq />
         <Contact />
       </main>
     </div>
