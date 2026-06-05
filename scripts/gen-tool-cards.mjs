@@ -51,6 +51,15 @@ const TOOLS = [
     fg: '#ffffff',
   },
   { id: 'supabase', label: 'Supabase', slug: 'supabase', bg: '#121212', fg: '#3ECF8E' },
+  // Pin the pre-2024-rebrand solid flame — the current outline mark reads thinner
+  // than the other cards' bold glyphs.
+  {
+    id: 'firebase',
+    label: 'Firebase',
+    iconUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/firebase.svg',
+    bg: '#121212',
+    fg: '#FFCA28',
+  },
   { id: 'github', label: 'GitHub', slug: 'github', bg: '#181717', fg: '#ffffff' },
   { id: 'figma', label: 'Figma', slug: 'figma', bg: '#1A1A1A', fg: '#ffffff' },
   { id: 'ollama', label: 'Ollama', slug: 'ollama', bg: '#0A0A0A', fg: '#ffffff' },

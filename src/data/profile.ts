@@ -133,6 +133,7 @@ export const toolGallery: ToolGalleryItem[] = [
   { image: '/tools/openai.svg', text: 'OpenAI' },
   { image: '/tools/gemini.svg', text: 'Gemini' },
   { image: '/tools/supabase.svg', text: 'Supabase' },
+  { image: '/tools/firebase.svg', text: 'Firebase' },
   { image: '/tools/github.svg', text: 'GitHub' },
   { image: '/tools/copilot.svg', text: 'GitHub Copilot' },
   { image: '/tools/ollama.svg', text: 'Ollama' },
