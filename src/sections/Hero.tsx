@@ -124,7 +124,13 @@ export function Hero() {
 
             {/* Name — the constant. Starts stacked/centred, slides into the
                 straddle as the portrait grows between the two lines. */}
-            <h1 className="pointer-events-none absolute inset-0 z-20 flex select-none flex-col justify-between font-display font-extrabold uppercase leading-[0.82] tracking-tight [text-shadow:0_4px_30px_rgba(0,0,0,0.6)]">
+            {/* aria-label gives a single clean accessible name — the two spans below
+                have no separating space, so without this the h1 extracts as
+                "DharsanKesavan", mismatching the title/OG/JSON-LD entity string. */}
+            <h1
+              aria-label={profile.name}
+              className="pointer-events-none absolute inset-0 z-20 flex select-none flex-col justify-between font-display font-extrabold uppercase leading-[0.82] tracking-tight [text-shadow:0_4px_30px_rgba(0,0,0,0.6)]"
+            >
               <motion.span style={sx({ y: firstY })} className="-ml-1 text-6xl xs:text-7xl sm:text-8xl">
                 {firstName}
               </motion.span>
@@ -179,6 +185,7 @@ export function Hero() {
                 <a
                   href={profile.cvPath}
                   download
+                  aria-label={`Download ${profile.name}'s CV (PDF)`}
                   className="btn-primary inline-flex h-12 items-center gap-2 px-6 text-base font-medium"
                 >
                   <Download className="h-5 w-5" /> Download CV

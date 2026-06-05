@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, useInView } from 'motion/react';
 import { useMotionSafe } from '@/lib/motion';
+import { isPrerender } from '@/lib/perf';
 
 interface AnimatedCounterProps {
   value: number;
@@ -27,7 +28,12 @@ export function AnimatedCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
   const safe = useMotionSafe();
-  const [display, setDisplay] = useState(safe ? 0 : value);
+  // Seed with the REAL value during prerender (react-snap) so the static HTML
+  // crawlers read ships "375+", "1530", … — not "0". Without this the snapshot
+  // counts up only on a real scroll, so an AI crawler would read "0 Products
+  // shipped / 0 SAT" and could cite that self-contradiction. Real browsers still
+  // start at 0 and animate. (Reduced-motion also jumps straight to the value.)
+  const [display, setDisplay] = useState(isPrerender() || !safe ? value : 0);
 
   useEffect(() => {
     if (!inView) return;

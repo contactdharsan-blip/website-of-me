@@ -58,7 +58,41 @@ function warnSkip(msg) {
 }
 
 const INDEX = 'dist/index.html';
-// Snapshot a copy of the pre-render HTML so we can restore CSR if the snapshot is empty.
+const SITEMAP = 'dist/sitemap.xml';
+
+/**
+ * Refresh freshness signals to the build date so they never rot:
+ *   • JSON-LD `dateModified` in dist/index.html
+ *   • every <lastmod> in dist/sitemap.xml
+ * Runs UNCONDITIONALLY (before the Chrome check below) so even a CSR-only build
+ * on an image without Chrome still ships an honest, current date. Non-fatal.
+ */
+function refreshBuildDates() {
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+  try {
+    if (existsSync(INDEX)) {
+      const html = readFileSync(INDEX, 'utf8').replace(
+        /("dateModified":\s*")\d{4}-\d{2}-\d{2}(")/,
+        `$1${today}$2`
+      );
+      writeFileSync(INDEX, html);
+    }
+    if (existsSync(SITEMAP)) {
+      const xml = readFileSync(SITEMAP, 'utf8').replace(
+        /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
+        `<lastmod>${today}</lastmod>`
+      );
+      writeFileSync(SITEMAP, xml);
+    }
+    console.log(`[prerender] refreshed build dates → ${today}`);
+  } catch (e) {
+    console.warn(`[prerender] date refresh skipped: ${e?.message ?? e}`);
+  }
+}
+
+refreshBuildDates();
+
+// Snapshot a copy of the pre-render HTML (with fresh dates) so we can restore CSR if the snapshot is empty.
 const csrBackup = existsSync(INDEX) ? readFileSync(INDEX, 'utf8') : null;
 
 const chrome = await resolveChrome();

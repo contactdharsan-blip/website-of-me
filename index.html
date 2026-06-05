@@ -39,41 +39,120 @@
     <meta name="twitter:image:alt" content="Dharsan Kesavan — Bioengineer & Software Builder" />
 
     <!--
-      Structured data: Person entity. This is the highest-leverage SEO element here —
-      it tells Google "Dharsan Kesavan" is a real entity with a title, school, and
-      verified profiles, which is what drives ranking + knowledge panels for a name query.
-      `sameAs` should list ONLY identity profiles (omit GitHub/X until those URLs exist).
+      Structured data: an @id-linked @graph. This is the highest-leverage SEO element here —
+      it tells Google + AI engines that one entity ("Dharsan Kesavan") is the author of the
+      site (WebSite), the subject of this page (ProfilePage), a current ASU student, and the
+      builder of Avorio + BioPath — all reconciled by absolute @id. That linkage is what drives
+      ranking, knowledge panels, and correct AI attribution for the name query.
+      NOTES:
+        • `dateModified` below is refreshed to the build date by scripts/prerender.mjs.
+        • `sameAs` lists ONLY identity profiles. GitHub/X are omitted until those URLs exist
+          (then add to BOTH this list and socials[] in src/data/profile.ts). The Medium URL in
+          socials[] is an ARTICLE, not an identity page, so it lives in the Article node, not sameAs.
     -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Dharsan Kesavan",
-        "url": "https://dharsankesavan.com/",
-        "image": "https://dharsankesavan.com/portrait.jpg",
-        "jobTitle": "Bioengineer & Software Builder",
-        "description": "Bioengineer and software builder working at the seam between life science and systems software — from a Rust-core spaced-repetition app to an ML-driven drug-interaction engine.",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Arizona State University"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Arizona",
-          "addressCountry": "US"
-        },
-        "knowsAbout": [
-          "Bioengineering",
-          "Biomedical Sciences",
-          "Software Engineering",
-          "Rust",
-          "Swift",
-          "Machine Learning",
-          "Spaced Repetition",
-          "Drug Interaction Analysis"
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/dharsan-kesavan-22927a285/"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://dharsankesavan.com/#person",
+            "name": "Dharsan Kesavan",
+            "givenName": "Dharsan",
+            "familyName": "Kesavan",
+            "url": "https://dharsankesavan.com/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://dharsankesavan.com/portrait.jpg",
+              "width": 1024,
+              "height": 1024,
+              "caption": "Dharsan Kesavan"
+            },
+            "jobTitle": "Bioengineer & Software Builder",
+            "description": "Dharsan Kesavan is a student in Arizona State University's inaugural McKenna (MLSBE) cohort, pursuing dual degrees in Biomedical Sciences and AI in Business, and a software builder. He builds Avorio, a Rust-core cross-platform spaced-repetition app, and BioPath, a machine-learning drug-interaction and safety engine.",
+            "email": "mailto:contactdharsan@gmail.com",
+            "alumniOf": { "@id": "https://dharsankesavan.com/#asu" },
+            "affiliation": { "@id": "https://dharsankesavan.com/#asu" },
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "Arizona",
+              "addressCountry": "US"
+            },
+            "knowsAbout": [
+              "Bioengineering",
+              "Biomedical Sciences",
+              "Software Engineering",
+              "Rust",
+              "Swift",
+              "Machine Learning",
+              "Spaced Repetition",
+              "Pharmacology",
+              "Drug Interaction Analysis"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/dharsan-kesavan-22927a285/"
+            ],
+            "mainEntityOfPage": { "@id": "https://dharsankesavan.com/#profilepage" }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://dharsankesavan.com/#website",
+            "url": "https://dharsankesavan.com/",
+            "name": "Dharsan Kesavan",
+            "alternateName": "Dharsan Kesavan — Bioengineer & Software Builder",
+            "publisher": { "@id": "https://dharsankesavan.com/#person" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://dharsankesavan.com/#profilepage",
+            "url": "https://dharsankesavan.com/",
+            "isPartOf": { "@id": "https://dharsankesavan.com/#website" },
+            "mainEntity": { "@id": "https://dharsankesavan.com/#person" },
+            "dateModified": "2026-06-05",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "@id": "https://dharsankesavan.com/#asu",
+            "name": "Arizona State University",
+            "sameAs": "https://www.asu.edu/"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://avorio.ai/#software",
+            "name": "Avorio",
+            "url": "https://avorio.ai",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "macOS, iOS, Android",
+            "description": "Avorio is a cross-platform spaced-repetition flashcard app built on the FSRS-5 algorithm. A single Rust core drives native macOS, iOS, and Android apps, with offline-first on-device SQLite and AI card generation via Anthropic, OpenAI, and Ollama.",
+            "author": { "@id": "https://dharsankesavan.com/#person" },
+            "creator": { "@id": "https://dharsankesavan.com/#person" }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://biopath.space/#software",
+            "name": "BioPath",
+            "url": "https://biopath.space",
+            "applicationCategory": "MedicalApplication",
+            "browserRequirements": "Requires JavaScript",
+            "description": "BioPath is a machine-learning drug-interaction and body-impact engine. From a drug name, plant photo, plant name, or pill imprint it resolves identity, biological targets, pathways, organ impact, and safety, predicting binding across roughly 700 human proteins.",
+            "author": { "@id": "https://dharsankesavan.com/#person" },
+            "creator": { "@id": "https://dharsankesavan.com/#person" }
+          },
+          {
+            "@type": "Article",
+            "@id": "https://medium.com/mindful-mental-health/npts-for-alzheimers-mst-and-cst-a85494de0699",
+            "headline": "Non-Pharmacological Therapies for Alzheimer's: MST and CST",
+            "datePublished": "2025-09",
+            "author": { "@id": "https://dharsankesavan.com/#person" },
+            "about": [
+              "Alzheimer's disease",
+              "Mnemonic Strategy Training",
+              "Cognitive Stimulation Therapy"
+            ],
+            "isPartOf": { "@type": "Periodical", "name": "Mindful Mental Health" }
+          }
         ]
       }
     </script>
@@ -85,6 +164,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..48,400..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link
       href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap"
       rel="stylesheet"
