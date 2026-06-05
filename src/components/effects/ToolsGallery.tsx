@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { useHighPerf } from '@/lib/motion';
-import { hasWebGL } from '@/lib/perf';
+import { hasWebGL, isPrerender } from '@/lib/perf';
 import { toolGallery } from '@/data/profile';
 import { SafeEffect } from './SafeEffect';
 
@@ -47,7 +47,9 @@ export function ToolsGallery() {
   const forced =
     typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('fx');
 
-  const showGL = (highPerf || forced) && webgl;
+  // During react-snap prerender, render the static grid (real <img>/text → crawlable)
+  // instead of the opaque WebGL canvas.
+  const showGL = (highPerf || forced) && webgl && !isPrerender();
 
   if (!showGL) return <FallbackGrid />;
 
@@ -61,7 +63,7 @@ export function ToolsGallery() {
             bend={3}
             borderRadius={0.05}
             textColor="#e8eaed"
-            font="bold 28px ui-sans-serif, system-ui, sans-serif"
+            font="bold 28px 'General Sans', system-ui, sans-serif"
             scrollEase={0.04}
           />
         </div>

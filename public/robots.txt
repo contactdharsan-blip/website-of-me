@@ -1,0 +1,5 @@
+# https://dharsankesavan.com
+User-agent: *
+Allow: /
+
+Sitemap: https://dharsankesavan.com/sitemap.xml
