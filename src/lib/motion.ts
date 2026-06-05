@@ -35,6 +35,21 @@ export function useHighPerf(): boolean {
   return safe && high;
 }
 
+/**
+ * true on medium-or-better tier with motion allowed — gate lightweight WebGL
+ * (the ambient background) on this so phones get it too. Phones almost never
+ * score `high` (Chrome buckets deviceMemory at ≤4 GB even on flagships), but a
+ * single fullscreen gradient scene is well within their GPU budget; only
+ * genuinely weak devices (`low`: software GPU, ≤2 GB RAM) keep the static
+ * fallback.
+ */
+export function useMediumPerf(): boolean {
+  const safe = useMotionSafe();
+  const [ok, setOk] = useState(() => detectPerfTier() !== 'low');
+  useEffect(() => setOk(detectPerfTier() !== 'low'), []);
+  return safe && ok;
+}
+
 /** Swap any variant's transition for this when motion is unsafe → UI snaps instead of animating. */
 export const instant: Transition = { duration: 0 };
 
