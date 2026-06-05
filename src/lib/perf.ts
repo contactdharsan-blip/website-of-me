@@ -10,6 +10,18 @@ export type PerfTier = 'high' | 'medium' | 'low';
 
 let cached: PerfTier | null = null;
 
+/**
+ * True when the page is being rendered by react-snap's prerender crawler.
+ * react-snap loads each page with a user agent containing "ReactSnap", which we
+ * use to skip decorative WebGL (Unicorn Studio injects a ~1 MB Three.js bundle
+ * into the DOM that would otherwise be frozen into the static snapshot) and render
+ * the semantic static fallback instead — better for crawlers, lighter HTML.
+ * Client-side this is always false, so real visitors get the full experience.
+ */
+export function isPrerender(): boolean {
+  return typeof navigator !== 'undefined' && /ReactSnap/i.test(navigator.userAgent);
+}
+
 /** Whether a WebGL context can actually be created (decorative WebGL needs it). */
 export function hasWebGL(): boolean {
   if (typeof window === 'undefined') return false;

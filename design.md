@@ -292,9 +292,12 @@ Gating rules:
 - **Functional variants** (modal, toast, dropdown, stagger) still *render* when
   unsafe — they just use `instant`, so the UI snaps instead of animating. Nothing
   becomes unreachable.
-- **Decorative / WebGL effects** (particles, fluid-glass ripple, animated hero
-  backgrounds, cursor glow) are **`high`-tier only** and are not rendered at all
-  on `medium`/`low`. The CSS-degradation approach: set a `perf-low` / `perf-medium`
+- **Decorative / WebGL effects** (particles, fluid-glass ripple, cursor glow)
+  are **`high`-tier only** and are not rendered at all on `medium`/`low`.
+  Exception: the single **ambient background** scene is cheap enough that it
+  renders on `medium` too (phones rarely score `high` because of Chrome's
+  deviceMemory bucketing) — only `low` drops it for the static fallback.
+  The CSS-degradation approach: set a `perf-low` / `perf-medium`
   class on `<html>` so effects can also down-shift in pure CSS (reduced blur,
   fewer particles, solid backgrounds).
 - Infinite/looping CSS animations should be disabled under `perf-low` and under

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
-import { useHighPerf } from '@/lib/motion';
-import { hasWebGL } from '@/lib/perf';
+import { useMediumPerf } from '@/lib/motion';
+import { hasWebGL, isPrerender } from '@/lib/perf';
 import { SafeEffect } from './SafeEffect';
 
 // Lazy so the Unicorn Studio scene (its bundled WebGL SDK + hosted scene) ships
@@ -14,13 +14,16 @@ const RaycastScene = lazy(() =>
 /**
  * Ambient dark canvas.
  *
- * High-perf tier → a Raycast-style animated gradient: a full-screen hosted
- * Unicorn Studio WebGL scene drifting soft glow blobs behind all content.
- * Medium/low tier & reduced-motion → just the faint static grid.
- * (design.md §5.4: decorative WebGL is high-tier only, with a static fallback.)
+ * Medium-or-better tier → a Raycast-style animated gradient: a full-screen
+ * hosted Unicorn Studio WebGL scene drifting soft glow blobs behind all
+ * content. Phones score `medium` (deviceMemory bucketing + coarse-pointer
+ * penalty), and this single scene runs fine there — so the gate is
+ * medium-or-better, not high-only like the heavier decorative effects.
+ * Low tier & reduced-motion → just the faint static grid.
+ * (design.md §5.4: ambient background is the one medium-tier WebGL exception.)
  */
 export function AmbientBackground() {
-  const highPerf = useHighPerf();
+  const mediumPerf = useMediumPerf();
   // WebGL check runs client-side only (after mount) so SSR/first paint is safe.
   const [webgl, setWebgl] = useState(false);
   useEffect(() => setWebgl(hasWebGL()), []);
@@ -29,7 +32,10 @@ export function AmbientBackground() {
   const forced =
     typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('fx');
 
-  const showGradient = (highPerf || forced) && webgl;
+  // Skip the Unicorn Studio scene during react-snap prerender — it injects a ~1 MB
+  // Three.js bundle into the DOM that would otherwise be frozen into the snapshot.
+  // Only the static CSS grid (below) is captured; the client renders the full scene.
+  const showGradient = (mediumPerf || forced) && webgl && !isPrerender();
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
