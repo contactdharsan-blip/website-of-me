@@ -41,6 +41,21 @@ export function Skills() {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* "Tools I use" — interactive curved WebGL gallery of branded tool cards
+          (drag / scroll to spin); degrades to a static card grid off the
+          high-perf path. See ToolsGallery / CircularGallery. */}
+      <motion.div {...revealOnScroll} className="mt-12 sm:mt-16">
+        <div className="mb-6 flex items-center gap-3">
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <h3 className="typo-label flex items-center gap-2 whitespace-nowrap">
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary-300 to-accent-400" />
+            Tools I use
+          </h3>
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        </div>
+        <ToolsGallery />
+      </motion.div>
     </SectionWrapper>
   );
 }
