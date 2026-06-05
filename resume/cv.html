@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+  CV source — med-school / research tailored.
+  Regenerate PDF:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+      --print-to-pdf="public/CV.pdf" --no-pdf-header-footer "file://$PWD/resume/cv.html"
+  Then copy to dist/CV.pdf if the built site is live.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Dharsan Kesavan — CV</title>
+<style>
+  @page { size: letter; margin: 0.45in 0.62in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; }
+  body {
+    font-family: "Palatino", "Georgia", serif;
+    font-size: 9.6pt;
+    line-height: 1.26;
+    color: #1a1a1a;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Header ── */
+  header { text-align: center; margin-bottom: 8pt; }
+  h1 {
+    font-size: 19pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .contact {
+    margin-top: 3pt;
+    font-size: 9.4pt;
+    color: #333;
+  }
+  .contact span + span::before { content: "  ·  "; color: #999; }
+
+  /* ── Sections ── */
+  section { margin-top: 6pt; }
+  h2 { break-after: avoid; }
+  h2 {
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 0.75pt solid #1a1a1a;
+    padding-bottom: 1.5pt;
+    margin-bottom: 4pt;
+  }
+
+  /* ── Entries ── */
+  .entry { margin-bottom: 4.5pt; }
+  .entry:last-child { margin-bottom: 0; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .org { font-weight: 700; }
+  .role { font-style: italic; }
+  .meta { font-size: 9.2pt; color: #444; white-space: nowrap; padding-left: 12pt; }
+  ul { margin: 1.5pt 0 0 14pt; }
+  li { margin-bottom: 1pt; }
+  .note { font-size: 9.2pt; color: #444; }
+
+  /* ── Skills two-column rows ── */
+  .skill-row { display: flex; margin-bottom: 2pt; }
+  .skill-label { font-weight: 700; min-width: 108pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dharsan Kesavan</h1>
+  <div class="contact">
+    <span>Phoenix, Arizona</span><span>(623) 230-7139</span><span><a href="mailto:contactdharsan@gmail.com">contactdharsan@gmail.com</a></span><span><a href="https://biopath.space">biopath.space</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Arizona State University</span> — Tempe, AZ</span>
+      <span class="meta">Expected May 2030</span>
+    </div>
+    <div class="role">Dual B.S., Biological Sciences (Biomedical Sciences) &amp; AI in Business</div>
+    <ul>
+      <li>McKenna Life Sciences, Business and Entrepreneurship (MLSBE) — <b>inaugural cohort</b>; selective 30-student dual-degree program of the W.&thinsp;P. Carey School of Business and The College, with an Entrepreneurship &amp; Innovation certificate</li>
+      <li>SAT: 1530</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Clinical Experience</h2>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Banner Health</span> — <span class="role">Patient-Facing Volunteer</span></span>
+      <span class="meta">2024 – Present · 175 hours</span>
+    </div>
+    <ul>
+      <li>Assisted patients and clinical staff across hospital departments, inpatient and outpatient, at one of the largest nonprofit health systems in the United States</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Physician Shadowing</span> — <span class="role">Nephrology</span></span>
+      <span class="meta">2024 – Present · 120 hours</span>
+    </div>
+    <ul>
+      <li>Shadowed a nephrologist through inpatient rounds, outpatient consultations, and dialysis management</li>
+      <li>Observed chronic kidney disease staging, fluid/electrolyte management, and the renal effects of diabetes and hypertension</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Independent Computational Projects</h2>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">BioPath</span> — <span class="role">Drug Interaction Checker &amp; Compound Body-Impact Analysis</span></span>
+      <span class="meta"><a href="https://biopath.space">biopath.space</a></span>
+    </div>
+    <ul>
+      <li>Built a computational pharmacology tool that takes a drug name, plant photo, or pill imprint and returns a single safety report covering binding targets, biological pathways, and organ-level impact</li>
+      <li>Integrated seven scientific databases (PubChem, ChEMBL, Reactome, OpenFDA, RxNorm, PlantNet, Dr. Duke's) into one automated pipeline, with interaction, dosage, and pregnancy-safety checks</li>
+      <li>Trained a Morgan-fingerprint CNN/MPNN on BindingDB to predict binding affinity across ~700 human proteins for compounds lacking measured data; cross-validated predictions against measured ChEMBL targets and used Tanimoto structural similarity (≥ 0.70) to transfer side-effect and interaction profiles from known analogs</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Avorio</span> — <span class="role">Spaced-Repetition Flashcard App (macOS, iOS, Android)</span></span>
+      <span class="meta">In development</span>
+    </div>
+    <ul>
+      <li>Implemented the FSRS-5 spaced-repetition algorithm in a single shared Rust core with native SwiftUI and Jetpack Compose interfaces; offline-first SQLite storage and LLM-assisted flashcard generation</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Scholarly Writing</h2>
+  <div class="entry">
+    <div class="row">
+      <span>"Non-Pharmacological Therapies for Alzheimer's Disease: MST and CST" — <span class="role">literature review</span></span>
+      <span class="meta">Sept 2025</span>
+    </div>
+    <ul>
+      <li>Wrote a literature review for <i>Mindful Mental Health</i> (Medium) comparing Mnemonic Strategy Training and Cognitive Stimulation Therapy: analyzed neuroimaging evidence, interpreted effect sizes (MST <i>d</i> = 0.75), and proposed a combined MST + CST protocol tailored to the individual patient</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Freelance Full-Stack Developer</span> — AlóJefe &amp; Cognifer Labs</span>
+      <span class="meta">2025 – 2026</span>
+    </div>
+    <ul>
+      <li>Built the website and backend for AlóJefe (alojefe.com), a bilingual AI voice assistant that answers calls for trade contractors, books estimates with drive-time routing, and tracks revenue (Next.js / Vercel)</li>
+      <li>Built and deployed the site and backend services for Cognifer Labs (cogniferlabs.com), an AI consulting firm that builds chatbots and business process automation for small businesses</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Honors &amp; Awards</h2>
+  <div class="entry">
+    <ul>
+      <li><b>Best Delegate</b>, Model United Nations <span class="note">(high school)</span></li>
+      <li><b>1 gold and 3 silver medals</b>, Academic Decathlon — state competition <span class="note">(high school)</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skill-row">
+    <span class="skill-label">Biomedical</span>
+    <span>Pharmacology (drug mechanisms, receptor binding, ADME, drug–drug interactions); bioinformatics databases (PubChem, ChEMBL, Reactome, OpenFDA, RxNorm, DrugBank); renal physiology; literature review &amp; effect-size interpretation</span>
+  </div>
+  <div class="skill-row">
+    <span class="skill-label">Programming</span>
+    <span>Python, Rust, Swift, Kotlin, TypeScript; machine learning (CNN/MPNN, model validation); React / Next.js; SQLite, PostgreSQL</span>
+  </div>
+</section>
+
+</body>
+</html>
