@@ -194,13 +194,23 @@ export const experience: ExperienceItem[] = [
     bullets: [],
   },
   {
-    org: 'Nephrology',
-    role: 'Physician Shadow',
+    org: 'Desert Kidney Associates',
+    role: 'Physician Shadow — Nephrology',
     period: '2024 – Present',
     meta: '120 hours',
     category: 'Clinical & Research',
     summary:
-      'Shadowed a nephrologist through inpatient rounds, outpatient consults, and dialysis management — chronic kidney disease staging, fluid/electrolyte management, and the intersection of diabetes and hypertension with renal outcomes.',
+      'Shadowed nephrologist Dr. Prashant Kolar through inpatient rounds, outpatient consults, and dialysis management — chronic kidney disease staging, fluid/electrolyte management, and the intersection of diabetes and hypertension with renal outcomes.',
+    bullets: [],
+  },
+  {
+    org: 'Physical Therapy',
+    role: 'Clinical Shadow',
+    period: '2023',
+    meta: '80 hours',
+    category: 'Clinical & Research',
+    summary:
+      'Shadowed physical therapist Salman Ashraf across outpatient rehabilitation — observing movement and gait assessment, therapeutic-exercise progression, manual therapy, and the rehab arc from injury to restored function.',
     bullets: [],
   },
   {
@@ -282,7 +292,7 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: 295, suffix: '+', label: 'Clinical hours' },
+  { value: 375, suffix: '+', label: 'Clinical hours' },
   { value: 2, label: 'Products shipped' },
   { value: 700, suffix: '+', label: 'Proteins modeled (BioPathML)' },
   { value: 1530, label: 'SAT (~99th pctl)' },

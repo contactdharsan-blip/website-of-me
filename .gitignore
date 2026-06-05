@@ -4,6 +4,9 @@
 # Personal working notes (dev journal) — not for the public repo
 tasks/
 
+# Local Claude Code settings & lock files
+.claude/
+
 # Dependencies & build output
 node_modules
 dist
