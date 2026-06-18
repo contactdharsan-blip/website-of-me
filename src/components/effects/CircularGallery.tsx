@@ -54,9 +54,7 @@ function autoBind(instance: object): void {
   });
 }
 
-const DEFAULT_FONT = 'bold 30px Figtree';
-const DEFAULT_FONT_URL =
-  'https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap';
+const DEFAULT_FONT = "bold 30px 'GC Gudlak'";
 
 function deriveFontFamilyFromUrl(url: string): string {
   const fileName = (url.split('/').pop() ?? 'custom-font').split('?')[0];
@@ -112,7 +110,10 @@ function loadCustomFont(fontUrl: string): Promise<string> {
 // Loads `fontUrl` and returns a canvas-ready font string keeping the size/weight
 // from `font` but swapping in the loaded family. Falls back to `font` on error.
 async function resolveFont(font: string, fontUrl?: string): Promise<string> {
-  const effectiveUrl = fontUrl || (font === DEFAULT_FONT ? DEFAULT_FONT_URL : null);
+  // GC Gudlak (and the default) is loaded document-wide via @font-face in
+  // src/index.css, so no remote stylesheet fetch is needed — we just await
+  // readiness below. An explicit `fontUrl` still loads a custom font.
+  const effectiveUrl = fontUrl || null;
   if (!effectiveUrl) {
     if (document.fonts?.load) {
       try {
@@ -492,7 +493,7 @@ class App {
       bend,
       textColor = '#ffffff',
       borderRadius = 0,
-      font = 'bold 30px Figtree',
+      font = DEFAULT_FONT,
       scrollSpeed = 2,
       scrollEase = 0.05,
     }: AppOptions,
@@ -664,7 +665,7 @@ export default function CircularGallery({
   bend = 3,
   textColor = '#ffffff',
   borderRadius = 0.05,
-  font = 'bold 30px Figtree',
+  font = DEFAULT_FONT,
   fontUrl,
   scrollSpeed = 2,
   scrollEase = 0.05,

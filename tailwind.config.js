@@ -28,9 +28,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['General Sans', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Bricolage Grotesque', 'General Sans', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['GC Gudlak', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['GC Gudlak', 'system-ui', 'sans-serif'],
+        mono: ['GC Gudlak', 'monospace'],
       },
       fontSize: {
         '8xl': ['6rem', { lineHeight: '1' }],

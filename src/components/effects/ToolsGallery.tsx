@@ -63,7 +63,7 @@ export function ToolsGallery() {
             bend={3}
             borderRadius={0.05}
             textColor="#e8eaed"
-            font="bold 28px 'General Sans', system-ui, sans-serif"
+            font="bold 28px 'GC Gudlak', system-ui, sans-serif"
             scrollEase={0.04}
           />
         </div>

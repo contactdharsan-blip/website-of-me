@@ -136,7 +136,7 @@ export function Hero() {
               </motion.span>
               <motion.span
                 style={sx({ y: lastY })}
-                className="self-end text-gradient text-6xl xs:text-7xl sm:text-8xl"
+                className="self-end text-6xl xs:text-7xl sm:text-8xl"
               >
                 {lastName}
               </motion.span>

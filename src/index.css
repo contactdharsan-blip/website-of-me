@@ -1,3 +1,11 @@
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Thin-BF695cd59bbba72.ttf') format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-ExtraLight-BF695cd59ba678a.ttf') format('truetype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Light-BF695cd59b5a172.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Regular-BF695cd59bb1a11.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Medium-BF695cd59b7df0f.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-SemiBold-BF695cd59bc5211.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Bold-BF695cd59b3f47c.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-ExtraBold-BF695cd59b73d76.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -85,7 +93,7 @@
     margin: 0;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    font-family: 'General Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'GC Gudlak', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
