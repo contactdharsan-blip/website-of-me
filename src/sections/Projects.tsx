@@ -34,7 +34,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+            <h3 className="font-epic text-2xl font-bold tracking-tight sm:text-3xl">
               {project.name}
             </h3>
             <p className="typo-caption mt-1">{project.blurb}</p>

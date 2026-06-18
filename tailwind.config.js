@@ -28,9 +28,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['GC Gudlak', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['General Sans', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['GC Gudlak', 'system-ui', 'sans-serif'],
-        mono: ['GC Gudlak', 'monospace'],
+        mono: ['General Sans', 'system-ui', 'monospace'],
+        epic: ['GC Epic Pro', 'GC Gudlak', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         '8xl': ['6rem', { lineHeight: '1' }],

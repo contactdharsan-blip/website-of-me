@@ -54,7 +54,7 @@ function autoBind(instance: object): void {
   });
 }
 
-const DEFAULT_FONT = "bold 30px 'GC Gudlak'";
+const DEFAULT_FONT = "bold 30px 'GC Epic Pro'";
 
 function deriveFontFamilyFromUrl(url: string): string {
   const fileName = (url.split('/').pop() ?? 'custom-font').split('?')[0];

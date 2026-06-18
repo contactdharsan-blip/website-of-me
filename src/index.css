@@ -6,6 +6,10 @@
 @font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-SemiBold-BF695cd59bc5211.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
 @font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-Bold-BF695cd59b3f47c.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: 'GC Gudlak'; src: url('/fonts/gudlak/GCGudlakDemo-ExtraBold-BF695cd59b73d76.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+/* GC Epic Pro — single-weight display Demo. weight range 100 900 maps the one
+   file to every weight request (no faux-bold synthesis). Used for project card
+   titles + the rolling gallery only. */
+@font-face { font-family: 'GC Epic Pro'; src: url('/fonts/epicpro/GC-EPICPRO-Demo-BF6891cc5419ab8.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -93,7 +97,7 @@
     margin: 0;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    font-family: 'GC Gudlak', system-ui, -apple-system, sans-serif;
+    font-family: 'General Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
