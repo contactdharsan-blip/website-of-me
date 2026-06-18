@@ -44,7 +44,13 @@ export function AmbientBackground() {
           <Suspense fallback={null}>
             {/* The scene's own div is a centered flow element; this absolute
                 wrapper stretches it to cover the fixed-inset-0 parent. */}
-            <div className="absolute inset-0 opacity-90 [&>div]:h-full [&>div]:w-full">
+            <div
+              className="absolute inset-0 opacity-90 [&>div]:h-full [&>div]:w-full"
+              // Desaturate the hosted scene so its colors stop fighting the red
+              // hero title for readability. Source colors live in the remote
+              // Unicorn Studio project, so we post-process the rendered pixels.
+              style={{ filter: 'saturate(0.65)' }}
+            >
               <RaycastScene />
             </div>
           </Suspense>
