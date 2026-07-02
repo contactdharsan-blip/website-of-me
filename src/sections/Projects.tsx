@@ -96,7 +96,7 @@ export function Projects() {
       id="projects"
       eyebrow="Work"
       title="Selected projects"
-      description="Two products I’ve designed and built end-to-end — one shipping, one in active development."
+      description="Products I’ve designed and built end-to-end — from shipped to active development."
     >
       <motion.div
         {...revealOnScroll}

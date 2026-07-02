@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Copy, Check, Mail, ArrowUpRight } from 'lucide-react';
+import { Copy, Check, Mail, ArrowUpRight, Download } from 'lucide-react';
 import { profile, socials } from '@/data/profile';
 import { SectionWrapper } from '@/components/primitives/SectionWrapper';
 import { GlassCard } from '@/components/primitives/GlassCard';
@@ -87,9 +87,19 @@ export function Contact() {
         </GlassCard>
       </motion.div>
 
-      {/* Footer */}
+      {/* Footer — the CV link is intentionally repeated here (also in the
+          Hero) since it's the one artifact a recruiter may look for again
+          on the way out, without scrolling back up. */}
       <footer className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-8 text-center sm:flex-row sm:text-left">
         <p className="typo-mono">© {profile.name}</p>
+        <a
+          href={profile.cvPath}
+          download
+          aria-label={`Download ${profile.name}'s CV (PDF)`}
+          className="typo-caption inline-flex items-center gap-1.5 transition-colors hover:text-primary-300"
+        >
+          <Download className="h-3.5 w-3.5" /> Résumé (PDF)
+        </a>
         <p className="typo-caption inline-flex items-center gap-1.5">
           Built with React, Tailwind & Motion
           <ArrowUpRight className="h-3.5 w-3.5" />

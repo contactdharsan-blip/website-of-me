@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { profile, sections } from '@/data/profile';
-import { cn } from '@/lib/utils';
+import { cn, scrollToSection } from '@/lib/utils';
 
 /**
  * Fixed glass top-bar with a sliding "liquid" active-section indicator
@@ -40,7 +40,7 @@ export function Nav() {
 
   function go(e: React.MouseEvent, id: string) {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollToSection(id);
   }
 
   return (
@@ -78,6 +78,7 @@ export function Nav() {
                 key={s.id}
                 href={`#${s.id}`}
                 onClick={(e) => go(e, s.id)}
+                aria-current={isActive ? 'true' : undefined}
                 className={cn(
                   'relative shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors duration-200 sm:px-4',
                   isActive ? 'text-ink' : 'text-text-tertiary hover:text-text-primary'

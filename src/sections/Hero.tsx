@@ -6,7 +6,7 @@ import { useMotionSafe } from '@/lib/motion';
 import { Highlight } from '@/components/primitives/Highlight';
 import { MagneticButton } from '@/components/effects/MagneticButton';
 import { TiltCard } from '@/components/effects/TiltCard';
-import { cn } from '@/lib/utils';
+import { cn, scrollToSection } from '@/lib/utils';
 
 /** Splits the display name into [first, last] for the editorial straddle. */
 const nameWords = profile.name.split(' ');
@@ -37,21 +37,28 @@ export function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
 
   // ── Scroll-driven choreography ──────────────────────────────────────────
+  // Compressed vs. the original timeline: NN/g's scrolljacking guidance
+  // (nngroup.com/articles/scrolljacking-101) flags pinned intros that gate
+  // real content/CTAs behind a long forced scroll — recruiters skim a
+  // portfolio in ~10–15s, so the tagline + CTAs now resolve by ~80% of a
+  // shorter 160vh pin instead of 100% of 200vh (see h-[160vh] below), cutting
+  // the scroll distance to "content visible" by roughly a third while keeping
+  // every beat of the morph.
   // Portrait materialises first…
-  const portraitScale = useTransform(scrollYProgress, [0, 0.55], [0.72, 1]);
-  const portraitOpacity = useTransform(scrollYProgress, [0.05, 0.5], [0, 1]);
+  const portraitScale = useTransform(scrollYProgress, [0, 0.42], [0.72, 1]);
+  const portraitOpacity = useTransform(scrollYProgress, [0.03, 0.38], [0, 1]);
   // …while the two name lines slide apart from a centred two-line "title" stack
   // (≈ half the final straddle gap, so they sit stacked-but-not-overlapping at p0).
-  const firstY = useTransform(scrollYProgress, [0, 0.55], [60, 0]);
-  const lastY = useTransform(scrollYProgress, [0, 0.55], [-60, 0]);
+  const firstY = useTransform(scrollYProgress, [0, 0.42], [60, 0]);
+  const lastY = useTransform(scrollYProgress, [0, 0.42], [-60, 0]);
   // …then the journalistic overlays + masthead draw in…
-  const overlayOpacity = useTransform(scrollYProgress, [0.45, 0.8], [0, 1]);
-  const mastOpacity = useTransform(scrollYProgress, [0.5, 0.82], [0, 1]);
-  const mastY = useTransform(scrollYProgress, [0.5, 0.82], [-12, 0]);
-  const captionOpacity = useTransform(scrollYProgress, [0.55, 0.85], [0, 1]);
-  // …and finally the readable content + CTAs settle in.
-  const contentOpacity = useTransform(scrollYProgress, [0.66, 1], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.66, 1], [26, 0]);
+  const overlayOpacity = useTransform(scrollYProgress, [0.34, 0.62], [0, 1]);
+  const mastOpacity = useTransform(scrollYProgress, [0.38, 0.64], [0, 1]);
+  const mastY = useTransform(scrollYProgress, [0.38, 0.64], [-12, 0]);
+  const captionOpacity = useTransform(scrollYProgress, [0.42, 0.66], [0, 1]);
+  // …and finally the readable content + CTAs settle in — noticeably sooner.
+  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.5, 0.8], [26, 0]);
   // The "scroll" cue fades the moment you start.
   const cueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
@@ -64,7 +71,7 @@ export function Hero() {
     <section
       id="home"
       ref={ref}
-      className={cn('relative', pinned ? 'h-[200vh]' : 'min-h-[100svh]')}
+      className={cn('relative', pinned ? 'h-[160vh]' : 'min-h-[100svh]')}
     >
       {/* Pinned viewport (sticky) in morph mode; plain centered box otherwise */}
       <div
@@ -108,8 +115,11 @@ export function Hero() {
                       width={1024}
                       height={1024}
                       loading="eager"
-                      fetchPriority="high"
                       className="aspect-square w-full object-cover"
+                      // React 18's types accept only `fetchPriority`, but the runtime doesn't
+                      // special-case it until React 19 — spreading the lowercase DOM attribute
+                      // name gets the actual perf hint to the browser on this React version.
+                      {...{ fetchpriority: 'high' }}
                     />
                   </div>
                 </div>
@@ -196,7 +206,7 @@ export function Hero() {
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    scrollToSection('contact');
                   }}
                   className="btn-glass inline-flex h-12 items-center gap-2 px-6 text-base font-medium"
                 >
