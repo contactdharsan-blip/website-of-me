@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  CV source — med-school / research tailored.
+  CV source — MLSBE / venture-and-clinical framing, two pages.
   Regenerate PDF (filename is name-bearing so search/AI engines bind it to the person):
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
       --print-to-pdf="public/Dharsan-Kesavan-CV.pdf" --no-pdf-header-footer "file://$PWD/resume/cv.html"
@@ -11,63 +11,69 @@
 <meta charset="utf-8" />
 <title>Dharsan Kesavan — CV</title>
 <style>
-  @page { size: letter; margin: 0.45in 0.62in; }
+  @page { size: letter; margin: 0.4in 0.58in; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-print-color-adjust: exact; }
   body {
-    font-family: "Palatino", "Georgia", serif;
-    font-size: 9.6pt;
-    line-height: 1.26;
-    color: #1a1a1a;
+    font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+    font-size: 9.3pt;
+    line-height: 1.22;
+    color: #16181a;
   }
   a { color: inherit; text-decoration: none; }
 
   /* ── Header ── */
-  header { text-align: center; margin-bottom: 8pt; }
+  header { text-align: center; margin-bottom: 7pt; }
   h1 {
-    font-size: 19pt;
+    font-size: 18.5pt;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
   .contact {
     margin-top: 3pt;
-    font-size: 9.4pt;
-    color: #333;
+    font-size: 8.9pt;
+    color: #34383c;
   }
-  .contact span + span::before { content: "  ·  "; color: #999; }
+  .contact span + span::before { content: "  ·  "; color: #a8adb2; }
+  .links { margin-top: 1pt; font-size: 8.9pt; color: #34383c; }
+  .links span + span::before { content: "  ·  "; color: #a8adb2; }
 
   /* ── Sections ── */
-  section { margin-top: 6pt; }
-  h2 { break-after: avoid; }
+  section { margin-top: 5pt; }
   h2 {
-    font-size: 10pt;
+    font-size: 9.1pt;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    border-bottom: 0.75pt solid #1a1a1a;
+    border-bottom: 0.75pt solid #16181a;
     padding-bottom: 1.5pt;
-    margin-bottom: 4pt;
+    margin-bottom: 3.5pt;
+    break-after: avoid;
   }
 
   /* ── Entries ── */
-  .entry { margin-bottom: 4.5pt; }
+  .entry { margin-bottom: 3.8pt; }
+  .entry.keep { break-inside: avoid; }
   .entry:last-child { margin-bottom: 0; }
   .row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 12pt;
   }
   .org { font-weight: 700; }
   .role { font-style: italic; }
-  .meta { font-size: 9.2pt; color: #444; white-space: nowrap; padding-left: 12pt; }
-  ul { margin: 1.5pt 0 0 14pt; }
-  li { margin-bottom: 1pt; }
-  .note { font-size: 9.2pt; color: #444; }
+  .meta { font-size: 8.7pt; color: #4a4f55; white-space: nowrap; }
+  .sub { font-size: 8.9pt; color: #4a4f55; font-style: italic; }
+  ul { margin: 1.5pt 0 0 12pt; }
+  li { margin-bottom: 1pt; orphans: 2; widows: 2; }
+  li::marker { color: #7a8087; }
+  .note { color: #4a4f55; }
 
-  /* ── Skills two-column rows ── */
-  .skill-row { display: flex; margin-bottom: 2pt; }
-  .skill-label { font-weight: 700; min-width: 108pt; }
+  /* ── Compact two-column rows (skills, honors) ── */
+  .kv { display: flex; margin-bottom: 1.6pt; break-inside: avoid; }
+  .kv-label { font-weight: 700; min-width: 90pt; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -75,118 +81,213 @@
 <header>
   <h1>Dharsan Kesavan</h1>
   <div class="contact">
-    <span>Phoenix, Arizona</span><span>(623) 230-7139</span><span><a href="mailto:contactdharsan@gmail.com">contactdharsan@gmail.com</a></span><span><a href="https://biopath.space">biopath.space</a></span>
+    <span>Chandler, Arizona</span><span>(623) 230-7139</span><span><a href="mailto:contactdharsan@gmail.com">contactdharsan@gmail.com</a></span>
+  </div>
+  <div class="links">
+    <span><a href="https://dharsankesavan.com">dharsankesavan.com</a></span><span><a href="https://www.linkedin.com/in/dharsan-kesavan">linkedin.com/in/dharsan-kesavan</a></span><span><a href="https://github.com/contactdharsan-blip">github.com/contactdharsan-blip</a></span>
   </div>
 </header>
 
 <section>
   <h2>Education</h2>
-  <div class="entry">
+  <div class="entry keep">
     <div class="row">
-      <span><span class="org">Arizona State University</span> — Tempe, AZ</span>
+      <span><span class="org">Arizona State University</span>, Tempe, AZ</span>
       <span class="meta">Expected May 2030</span>
     </div>
-    <div class="role">Dual B.S., Biological Sciences (Biomedical Sciences) &amp; AI in Business</div>
+    <div class="role">Dual B.S., Biological Sciences (Biomedical Sciences) and AI in Business</div>
     <ul>
-      <li>McKenna Life Sciences, Business and Entrepreneurship (MLSBE) — <b>inaugural cohort</b>; selective 30-student dual-degree program of the W.&thinsp;P. Carey School of Business and The College, with an Entrepreneurship &amp; Innovation certificate</li>
-      <li>SAT: 1530</li>
+      <li>McKenna Life Sciences, Business and Entrepreneurship (MLSBE), <b>inaugural cohort</b>. A 30-student program run jointly by W.&thinsp;P. Carey and The College: two bachelor's degrees plus an Entrepreneurship and Innovation certificate in four years.</li>
+    </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">BASIS Chandler</span>, Chandler, AZ</span>
+      <span class="meta">Aug 2022 – May 2026</span>
+    </div>
+    <ul>
+      <li>AP Scholar with Distinction. Scores of 5 in AP Biology, AP Chemistry, and AP Physics 1. SAT 1530.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Ventures and Products</h2>
+
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">Cognifer Labs</span>, <span class="role">Co-Founder</span></span>
+      <span class="meta">Mar 2026 – Present</span>
+    </div>
+    <div class="sub">Avorio, a native spaced-repetition learning app for macOS and iOS. <a href="https://avorio.ai">avorio.ai</a></div>
+    <ul>
+      <li>Shipped Avorio to the App Store: version 1.0 approved July 2026, and 1.1 approved and released the day it was submitted. The Mac app ships as a Developer ID-signed, notarized direct download with Sparkle auto-updates.</li>
+      <li>Built the product on one shared Rust core (FSRS-5 and SM-2 scheduling, rusqlite storage, Anki import and export, gamification, AI routing) exposed to Swift and Kotlin through a single UniFFI interface. Three platforms run one implementation instead of three that drift apart.</li>
+      <li>Made switching from Anki lossless. Importing .apkg and .colpkg keeps ease factors, intervals, lapses, review history, media, cloze, and image occlusion, with a diff report before anything commits. Avorio then replays that review log to fit the learner's own FSRS-5 parameters, above a 1,000-review floor where a fitted model would be worse than the default.</li>
+      <li>Shipped the AI layer as a managed gateway with server-held keys and free choice of model, plus free on-device paths through Apple Intelligence and Ollama. It turns a document into cards and diagrams, explains single cards, and runs a tutor that reads a card's scheduling signals to teach the point the learner keeps missing.</li>
+      <li>Ran the backend and the money: Supabase with 66 Postgres migrations and 12 edge functions, Stripe web checkout, and RevenueCat and StoreKit subscriptions across three tiers. The flashcard core is free; paid tiers cover cloud AI and optional Mac to iPhone sync. Localized into eight languages beyond English, with roughly 1,079 Rust, 245 Swift, and 160 Kotlin tests gated in CI on every change, and an Android build in Jetpack Compose in progress against the same core.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">BioPath</span>, <span class="role">Founder and Sole Engineer</span></span>
+      <span class="meta">2025 – Present</span>
+    </div>
+    <div class="sub">Drug interaction checker and compound body-impact analysis. <a href="https://biopath.space">biopath.space</a></div>
+    <ul>
+      <li>Built a computational pharmacology tool that answers one question end to end: what will this compound do inside a body, and is it safe with what someone already takes. It starts from a drug name, plant photo, plant name, or pill imprint.</li>
+      <li>Connected ten scientific databases, each holding one piece of the answer and none of the others (PubChem, ChEMBL, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, PlantNet, Dr. Duke's). The pipeline resolves identity, finds binding targets, maps them onto 200+ pathways, scores organ impact, and returns interaction, dosage, and pregnancy safety.</li>
+      <li>Trained a Morgan-fingerprint CNN and MPNN on BindingDB to predict binding affinity across roughly 700 human proteins, covering obscure natural products and novel molecules with no measured data. Predictions are cross-checked against measured ChEMBL targets: agreement raises confidence, disagreement is flagged rather than hidden.</li>
+      <li>Used Tanimoto structural similarity at a 0.70 threshold to carry side effects, pregnancy categories, and interaction risk over from analogous known drugs. Every prediction shows its provenance and confidence rather than a bare number.</li>
+    </ul>
+  </div>
+
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">AlóJefe</span>, <span class="role">Full-Stack Developer (client)</span></span>
+      <span class="meta">2025 – 2026</span>
+    </div>
+    <ul>
+      <li>Built the site and backend for a bilingual AI phone assistant sold to solo contractors in roofing, HVAC, and plumbing. It answers the calls an owner cannot take from a roof, qualifies the job, books an estimate with drive-time routing, and texts back a summary, switching between English and Spanish mid-sentence. Next.js on Vercel.</li>
     </ul>
   </div>
 </section>
 
 <section>
   <h2>Clinical Experience</h2>
-  <div class="entry">
+  <div class="entry keep">
     <div class="row">
-      <span><span class="org">Banner Health</span> — <span class="role">Patient-Facing Volunteer</span></span>
+      <span><span class="org">Banner Health</span>, <span class="role">Patient-Facing Volunteer</span></span>
       <span class="meta">2024 – Present · 175 hours</span>
     </div>
     <ul>
-      <li>Assisted patients and clinical staff across hospital departments, inpatient and outpatient, at one of the largest nonprofit health systems in the United States</li>
+      <li>Assisted patients and clinical staff across inpatient and outpatient departments at one of the largest nonprofit health systems in the country. Built a front-desk data system that cut the time it took to log and retrieve patient information.</li>
     </ul>
   </div>
-  <div class="entry">
+  <div class="entry keep">
     <div class="row">
-      <span><span class="org">Physician Shadowing</span> — <span class="role">Nephrology</span></span>
+      <span><span class="org">Desert Kidney Associates</span>, <span class="role">Physician Shadowing, Nephrology</span></span>
       <span class="meta">2024 – Present · 120 hours</span>
     </div>
     <ul>
-      <li>Shadowed a nephrologist through inpatient rounds, outpatient consultations, and dialysis management</li>
-      <li>Observed chronic kidney disease staging, fluid/electrolyte management, and the renal effects of diabetes and hypertension</li>
+      <li>Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management. Followed chronic kidney disease staging, fluid and electrolyte management, and the way diabetes and hypertension end up as renal outcomes. Sat in on patient education about lifestyle change, which is where much of the disease course actually gets decided.</li>
     </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">ROC Physical Therapy</span>, <span class="role">Clinical Shadowing</span></span>
+      <span class="meta">2023 · 80 hours</span>
+    </div>
+    <ul>
+      <li>Observed outpatient rehabilitation with physical therapist Salman Ashraf: gait and movement assessment, therapeutic exercise progression, manual therapy, and the arc from injury back to function.</li>
+    </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">Emergency Medical Technician</span>, <span class="role">training in progress</span></span>
+      <span class="meta">2026</span>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Independent Computational Projects</h2>
-  <div class="entry">
+  <h2>Research and Scholarly Writing</h2>
+  <div class="entry keep">
     <div class="row">
-      <span><span class="org">BioPath</span> — <span class="role">Drug Interaction Checker &amp; Compound Body-Impact Analysis</span></span>
-      <span class="meta"><a href="https://biopath.space">biopath.space</a></span>
-    </div>
-    <ul>
-      <li>Built a computational pharmacology tool that takes a drug name, plant photo, or pill imprint and returns a single safety report covering binding targets, biological pathways, and organ-level impact</li>
-      <li>Integrated seven scientific databases (PubChem, ChEMBL, Reactome, OpenFDA, RxNorm, PlantNet, Dr. Duke's) into one automated pipeline, with interaction, dosage, and pregnancy-safety checks</li>
-      <li>Trained a Morgan-fingerprint CNN/MPNN on BindingDB to predict binding affinity across ~700 human proteins for compounds lacking measured data; cross-validated predictions against measured ChEMBL targets and used Tanimoto structural similarity (≥ 0.70) to transfer side-effect and interaction profiles from known analogs</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row">
-      <span><span class="org">Avorio</span> — <span class="role">Spaced-Repetition Flashcard App (macOS, iOS, Android)</span></span>
-      <span class="meta">In development</span>
-    </div>
-    <ul>
-      <li>Implemented the FSRS-5 spaced-repetition algorithm in a single shared Rust core with native SwiftUI and Jetpack Compose interfaces; offline-first SQLite storage and LLM-assisted flashcard generation</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Scholarly Writing</h2>
-  <div class="entry">
-    <div class="row">
-      <span>"Non-Pharmacological Therapies for Alzheimer's Disease: MST and CST" — <span class="role">literature review</span></span>
+      <span>"Non-Pharmacological Therapies for Alzheimer's Disease: MST and CST," <span class="role">literature review</span></span>
       <span class="meta">Sept 2025</span>
     </div>
     <ul>
-      <li>Wrote a literature review for <i>Mindful Mental Health</i> (Medium) comparing Mnemonic Strategy Training and Cognitive Stimulation Therapy: analyzed neuroimaging evidence, interpreted effect sizes (MST <i>d</i> = 0.75), and proposed a combined MST + CST protocol tailored to the individual patient</li>
+      <li>Wrote a literature review for <i>Mindful Mental Health</i> on Medium comparing Mnemonic Strategy Training and Cognitive Stimulation Therapy. Read the neuroimaging evidence, compared effect sizes across studies (MST at <i>d</i> = 0.75), named the gap each approach leaves when used alone, and proposed a combined protocol matched to the individual patient.</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>Professional Experience</h2>
-  <div class="entry">
+  <h2>Leadership and Teaching</h2>
+  <div class="entry keep">
     <div class="row">
-      <span><span class="org">Freelance Full-Stack Developer</span> — AlóJefe &amp; Cognifer Labs</span>
-      <span class="meta">2025 – 2026</span>
+      <span><span class="org">Flare Review</span>, <span class="role">Director of Operations</span></span>
+      <span class="meta">Oct 2025 – Present</span>
     </div>
     <ul>
-      <li>Built the website and backend for AlóJefe (alojefe.com), a bilingual AI voice assistant that answers calls for trade contractors, books estimates with drive-time routing, and tracks revenue (Next.js / Vercel)</li>
-      <li>Built and deployed the site and backend services for Cognifer Labs (cogniferlabs.com), an AI consulting firm that builds chatbots and business process automation for small businesses</li>
+      <li>Run operations for a student-led video editing nonprofit: scheduling, project intake, and hand-off between editors.</li>
+    </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">Schoolhouse.world</span>, <span class="role">Senior Tutor</span></span>
+      <span class="meta">Nov 2023 – Jun 2026</span>
+    </div>
+    <ul>
+      <li>Tutored one on one, building each plan around what the student was actually getting wrong. Recruited and onboarded new tutors, which is what let the program reach more students than any one person could.</li>
+    </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">Volunteer Teacher</span>, <span class="role">student meal program</span></span>
+      <span class="meta">2023 – 2025</span>
+    </div>
+    <ul>
+      <li>Raised $7,000 for student meal programs and taught in the classrooms that money paid for. Also coached students on career paths, the part they asked for most.</li>
+    </ul>
+  </div>
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">Arizona Tamil School</span>, <span class="role">Teaching Assistant</span></span>
+      <span class="meta">10+ years</span>
+    </div>
+    <ul>
+      <li>Taught language and culture classes for a decade and coordinated the annual performances, from rehearsal scheduling through the night itself.</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>Honors &amp; Awards</h2>
+  <h2>Other Software</h2>
   <div class="entry">
     <ul>
-      <li><b>Best Delegate</b>, Model United Nations <span class="note">(high school)</span></li>
-      <li><b>1 gold and 3 silver medals</b>, Academic Decathlon — state competition <span class="note">(high school)</span></li>
+      <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, and switching agents rebuilds context under a label reading "reconstructed, not resumed" rather than pretending the session moved. 10,400 lines, 117 tests.</li>
+      <li><b>Backglass</b>. A local-first commitment ledger in Python (102 modules, 20 source connectors, 71 test files) that reads Gmail, Drive, Calendar, notes, iMessage, Slack, and GitHub on a schedule and extracts typed records: what you owe, what is owed to you, deadlines, and goal checkpoints, each linked back to the source item it came from. It returns a 6&thinsp;a.m. brief and a dashboard, with no chat interface and no vector database on purpose: the questions are fixed and known in advance, so the work belongs at ingest in plain SQL. A cheap triage tier sits in front of the model under a hard monthly spend cap, and across 3,687 real messages a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced.</li>
+      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python gives each agent dual-process System 1 and System 2 reasoning, identity-threat detection, and a demographically biased media diet, so adoption depends on who the agent is and not only on how many neighbours already believe it. Both write per-timestep state counts for analysis, and the C++ build ships a live SFML visualizer.</li>
     </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Honors and Certifications</h2>
+  <div class="kv">
+    <span class="kv-label">Honors</span>
+    <span>Best Delegate, Model United Nations. One gold and three silver medals, Academic Decathlon state competition.</span>
+  </div>
+  <div class="kv">
+    <span class="kv-label">Certifications</span>
+    <span>Introductory Human Physiology, Duke University (Aug 2025, credential 3SYLO9PVP12V). Machine Learning in Healthcare, Northeastern University. OSHA Bloodborne Pathogens and HIPAA for healthcare workers.</span>
   </div>
 </section>
 
 <section>
   <h2>Skills</h2>
-  <div class="skill-row">
-    <span class="skill-label">Biomedical</span>
-    <span>Pharmacology (drug mechanisms, receptor binding, ADME, drug–drug interactions); bioinformatics databases (PubChem, ChEMBL, Reactome, OpenFDA, RxNorm, DrugBank); renal physiology; literature review &amp; effect-size interpretation</span>
+  <div class="kv">
+    <span class="kv-label">Biomedical</span>
+    <span>Pharmacology: drug mechanisms, receptor binding, ADME, drug-drug interactions. Bioinformatics databases: PubChem, ChEMBL, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, DrugBank. Renal physiology. Literature review and effect-size interpretation.</span>
   </div>
-  <div class="skill-row">
-    <span class="skill-label">Programming</span>
-    <span>Python, Rust, Swift, Kotlin, TypeScript; machine learning (CNN/MPNN, model validation); React / Next.js; SQLite, PostgreSQL</span>
+  <div class="kv">
+    <span class="kv-label">Programming</span>
+    <span>Rust, Swift and SwiftUI, Kotlin and Jetpack Compose, Python, TypeScript, C++. UniFFI, rusqlite, React and Next.js, Tauri.</span>
+  </div>
+  <div class="kv">
+    <span class="kv-label">Machine learning</span>
+    <span>Morgan-fingerprint CNN and MPNN training on BindingDB, cross-validation against measured data, Tanimoto similarity, LLM integration through Anthropic, OpenAI, and Ollama.</span>
+  </div>
+  <div class="kv">
+    <span class="kv-label">Infrastructure</span>
+    <span>Supabase and Postgres, SQLite in WAL mode, Deno edge functions, Vercel, Stripe, RevenueCat and StoreKit, GitHub Actions CI.</span>
+  </div>
+  <div class="kv">
+    <span class="kv-label">Business</span>
+    <span>Product pricing and tiering, App Store submission and review, code signing and notarization, localization, freelance delivery, fundraising, recruiting.</span>
   </div>
 </section>
 

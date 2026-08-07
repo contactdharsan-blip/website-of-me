@@ -1,52 +1,103 @@
 # Experience
 
-## Freelance Software Development
+## Ventures and Products
 
-### AlóJefe — Full-Stack Developer
-*[alojefe.com](https://www.alojefe.com) · Next.js / Vercel*
+### Cognifer Labs — Co-Founder
+*Mar 2026 – Present · Chandler, AZ · [avorio.ai](https://avorio.ai)*
 
-Built the website and backend for a bilingual AI voice assistant platform targeting solo contractors and trades (roofing, HVAC, plumbing, electrical). The product answers inbound calls 24/7, qualifies job inquiries, books calendar estimates with drive-time routing, and sends text summaries to business owners — in both English and Spanish with mid-sentence language switching.
+Building Avorio, a native spaced-repetition learning app for macOS and iOS, plus the infrastructure behind it.
 
-- Designed and implemented backend logic for call handling, calendar integration, and revenue tracking dashboard
-- Built full Next.js App Router site deployed on Vercel
-- Product targets missed-call revenue loss for on-site contractors who can't answer while working
-
----
-
-### Cognifer Labs — Full-Stack Developer
-*[cogniferlabs.com](https://cogniferlabs.com) · Next.js / Vercel*
-
-Built the website and backend for an AI consulting and automation firm serving small businesses. Product suite includes AI chatbots, custom workflow automation, data analytics, and cloud infrastructure migration — positioned as enterprise-grade AI at SMB pricing.
-
-- Implemented backend services for AI chatbot integration and business workflow automation
-- Built and deployed the marketing and product site on Vercel
+- Shipped Avorio to the App Store: v1.0 approved July 2026, v1.1 approved and released the day it was submitted. The Mac app ships as a Developer ID-signed, notarized direct download with Sparkle auto-updates.
+- Built the product on one shared Rust core (FSRS-5 and SM-2 scheduling, rusqlite storage, Anki import/export, gamification, AI routing) exposed to Swift and Kotlin through a single UniFFI interface, so three platforms run one implementation instead of three that drift apart.
+- Made switching from Anki lossless: importing `.apkg`/`.colpkg` keeps ease factors, intervals, lapses, review history, media, cloze, and image occlusion, with a diff report before anything commits. Avorio then replays that review log to fit the learner's own FSRS-5 parameters, above a 1,000-review floor where a fitted model would be worse than the default.
+- Shipped the AI layer as a managed gateway with server-held keys and free choice of model, plus free on-device paths through Apple Intelligence and Ollama: document-to-cards with generated diagrams, per-card explanations, and a tutor that reads a card's own scheduling signals to teach the point the learner keeps missing.
+- Ran the backend and monetization: Supabase with 66 Postgres migrations and 12 edge functions, Stripe web checkout, RevenueCat/StoreKit subscriptions across three tiers. The flashcard core is free; paid tiers cover cloud AI and optional Mac↔iPhone sync.
+- Localized into eight languages beyond English, with roughly 1,079 Rust, 245 Swift, and 160 Kotlin tests gated in CI on every change. Android (Jetpack Compose) is in active development against the same core.
 
 ---
 
-## Clinical & Research
+### BioPath — Founder & Sole Engineer
+*2025 – Present · [biopath.space](https://biopath.space)*
 
-### Volunteer — Banner Health
+See `projects.md` for the full write-up.
+
+---
+
+### AlóJefe — Full-Stack Developer (client)
+*2025 – 2026 · [alojefe.com](https://www.alojefe.com) · Next.js / Vercel*
+
+Built the site and backend for a bilingual AI phone assistant sold to solo contractors in roofing, HVAC, and plumbing. It answers the calls an owner can't take from a roof, qualifies the job, books an estimate with drive-time routing, and texts back a summary, switching between English and Spanish mid-sentence.
+
+---
+
+## Clinical
+
+### Banner Health — Patient-Facing Volunteer
 *2024 – Present · 175 hours*
 
-Patient-facing volunteer at one of the largest nonprofit health systems in the US. Supported clinical staff, assisted patients, and observed care delivery across hospital departments.
+Assisted patients and clinical staff across inpatient and outpatient departments at one of the largest nonprofit health systems in the country. Built a front-desk data system that cut the time it took to log and retrieve patient information.
 
 ---
 
-### Physician Shadow — Nephrology
+### Desert Kidney Associates — Physician Shadowing, Nephrology
 *2024 – Present · 120 hours*
 
-Shadowed a nephrologist through inpatient rounds, outpatient consultations, and dialysis management. Gained exposure to chronic kidney disease staging, fluid/electrolyte management, and the intersection of systemic diseases (diabetes, hypertension) with renal outcomes.
+Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management. Followed chronic kidney disease staging, fluid and electrolyte management, and the way diabetes and hypertension end up as renal outcomes. Sat in on patient education about lifestyle change, which is where much of the disease course actually gets decided.
 
 ---
+
+### ROC Physical Therapy — Clinical Shadowing
+*2023 · 80 hours*
+
+Observed outpatient rehabilitation with physical therapist Salman Ashraf: gait and movement assessment, therapeutic exercise progression, manual therapy, and the arc from injury back to function.
+
+---
+
+### Emergency Medical Technician — training in progress
+*2026*
+
+---
+
+## Research and Scholarly Writing
 
 ### Literature Review — Non-Pharmacological Therapies for Alzheimer's Disease
 *Published September 2025 · Mindful Mental Health (Medium)*
 
-Authored a peer-reviewed-style literature review comparing two non-pharmacological interventions for Alzheimer's disease:
+Compared two non-pharmacological interventions for Alzheimer's disease:
 
-- **Mnemonic Strategy Training (MST)** — encoding techniques that leverage acronyms to improve memory retrieval via neuroplasticity; demonstrated effect size *d* = 0.75 in reviewed studies
+- **Mnemonic Strategy Training (MST)** — encoding techniques that leverage acronyms to improve memory retrieval via neuroplasticity; effect size *d* = 0.75 in the reviewed studies
 - **Cognitive Stimulation Therapy (CST)** — group-based social stimulation targeting quality of life and social cognition
 
-Analyzed neuroimaging evidence, compared effect sizes, and proposed a combined MST + CST protocol for individualized patient outcomes.
+Read the neuroimaging evidence, compared effect sizes across studies, named the gap each approach leaves when used alone, and proposed a combined MST + CST protocol matched to the individual patient.
 
 [Read on Medium →](https://medium.com/mindful-mental-health/npts-for-alzheimers-mst-and-cst-a85494de0699)
+
+---
+
+## Leadership and Teaching
+
+### Flare Review — Director of Operations
+*Oct 2025 – Present · Remote*
+
+Run operations for a student-led video editing nonprofit: scheduling, project intake, and hand-off between editors.
+
+---
+
+### Schoolhouse.world — Senior Tutor
+*Nov 2023 – Jun 2026 · Remote*
+
+Tutored one on one, building each plan around what the student was actually getting wrong. Recruited and onboarded new tutors, which is what let the program reach more students than any one person could.
+
+---
+
+### Volunteer Teacher — student meal program
+*2023 – 2025*
+
+Raised $7,000 for student meal programs and taught in the classrooms that money paid for. Also coached students on career paths, the part they asked for most.
+
+---
+
+### Arizona Tamil School — Teaching Assistant
+*10+ years*
+
+Taught language and culture classes for a decade and coordinated the annual performances, from rehearsal scheduling through the night itself.
