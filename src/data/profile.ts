@@ -222,11 +222,11 @@ export const experience: ExperienceItem[] = [
     href: 'https://medium.com/mindful-mental-health/npts-for-alzheimers-mst-and-cst-a85494de0699',
     category: 'Clinical & Research',
     summary:
-      'A peer-reviewed-style literature review comparing two non-pharmacological interventions for Alzheimer’s disease, analyzing neuroimaging evidence and effect sizes.',
+      'A literature review comparing two non-pharmacological interventions for Alzheimer’s disease, working through the neuroimaging evidence and the published effect sizes for each.',
     bullets: [
-      'Mnemonic Strategy Training (MST) — encoding techniques leveraging neuroplasticity; effect size d = 0.75',
-      'Cognitive Stimulation Therapy (CST) — group-based social stimulation for quality of life',
-      'Proposed a combined MST + CST protocol for individualized patient outcomes',
+      'Mnemonic Strategy Training (MST) — encoding strategies that show their largest gains on trained material in mild cognitive impairment',
+      'Cognitive Stimulation Therapy (CST) — group-based social stimulation, with smaller cognitive effects but measurable gains in mood and self-reported quality of life',
+      'Argued the two are complementary rather than competing, and that a combined approach is worth testing',
     ],
   },
 ];

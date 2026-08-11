@@ -65,10 +65,10 @@ Observed outpatient rehabilitation with physical therapist Salman Ashraf: gait a
 
 Compared two non-pharmacological interventions for Alzheimer's disease:
 
-- **Mnemonic Strategy Training (MST)** — encoding techniques that leverage acronyms to improve memory retrieval via neuroplasticity; effect size *d* = 0.75 in the reviewed studies
-- **Cognitive Stimulation Therapy (CST)** — group-based social stimulation targeting quality of life and social cognition
+- **Mnemonic Strategy Training (MST)** — encoding strategies that improve retrieval via neuroplasticity, with the largest gains on trained material in mild cognitive impairment
+- **Cognitive Stimulation Therapy (CST)** — group-based social stimulation; smaller cognitive effects, but measurable gains in mood, communication, and self-reported quality of life
 
-Read the neuroimaging evidence, compared effect sizes across studies, named the gap each approach leaves when used alone, and proposed a combined MST + CST protocol matched to the individual patient.
+Worked through the neuroimaging evidence, showed why the two interventions' effect sizes cannot be compared head-to-head — different outcome measures, different patient populations — and argued they are complementary rather than competing.
 
 [Read on Medium →](https://medium.com/mindful-mental-health/npts-for-alzheimers-mst-and-cst-a85494de0699)
 
