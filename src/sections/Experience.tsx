@@ -91,7 +91,7 @@ export function Experience() {
       id="experience"
       eyebrow="Journey"
       title="Experience"
-      description="Two parallel tracks — shipping software and building clinical depth on the pre-med path."
+      description="Three parallel tracks — shipping software, building clinical depth on the pre-med path, and teaching."
     >
       <div ref={containerRef} className="relative">
         {/* Connector track + animated fill */}

@@ -149,17 +149,42 @@ export interface ExperienceItem {
   period: string;
   meta?: string;
   href?: string;
-  category: 'Software' | 'Clinical & Research';
+  category: 'Software' | 'Clinical & Research' | 'Leadership & Teaching';
   summary: string;
   bullets: string[];
 }
 
 export const experience: ExperienceItem[] = [
   {
+    org: 'VivaMed BioPharma',
+    role: 'Paid Technical Intern',
+    period: 'Aug 2026 – Present',
+    meta: '2 mos · Contract',
+    category: 'Software',
+    summary:
+      'Agentic AI tooling for computational biology research — MCP servers, in-silico analysis pipelines, and the data infrastructure behind them, with biweekly written findings summaries for the research leads.',
+    bullets: ['10–20 hrs/week alongside a dual-degree course load at ASU'],
+  },
+  {
+    org: 'Cognifer Labs',
+    role: 'Founder',
+    period: 'Mar 2026 – Present',
+    meta: '7 mos · Self-employed',
+    href: 'https://cogniferlabs.com',
+    category: 'Software',
+    summary:
+      'Founded Cognifer Labs and built Avorio (avorio.ai), a native spaced-repetition app for Mac and iPhone that launched in July 2026.',
+    bullets: [
+      'Built a shared Rust core for scheduling, storage, and Anki import across platforms via UniFFI',
+      'Integrated an AI layer with free on-device options and shipped subscriptions through Stripe and StoreKit',
+      'Currently porting to Android on the same core',
+    ],
+  },
+  {
     org: 'AlóJefe',
     role: 'Full-Stack Developer',
-    period: 'Freelance',
-    meta: 'Next.js · Vercel',
+    period: '2025 – 2026',
+    meta: 'Freelance · Next.js · Vercel',
     href: 'https://www.alojefe.com',
     category: 'Software',
     summary:
@@ -171,28 +196,14 @@ export const experience: ExperienceItem[] = [
     ],
   },
   {
-    org: 'Cognifer Labs',
-    role: 'Full-Stack Developer',
-    period: 'Freelance',
-    meta: 'Next.js · Vercel',
-    href: 'https://cogniferlabs.com',
-    category: 'Software',
-    summary:
-      'Website + backend for an AI consulting and automation firm serving small businesses — chatbots, custom workflow automation, data analytics, and cloud migration, positioned as enterprise-grade AI at SMB pricing.',
-    bullets: [
-      'Implemented backend services for AI chatbot integration and workflow automation',
-      'Built and deployed the marketing and product site on Vercel',
-    ],
-  },
-  {
     org: 'Banner Health',
     role: 'Patient-Facing Volunteer',
     period: '2024 – Present',
     meta: '175 hours',
     category: 'Clinical & Research',
     summary:
-      'Volunteer at one of the largest nonprofit health systems in the US. Supported clinical staff, assisted patients, and observed care delivery across hospital departments.',
-    bullets: [],
+      'Volunteer at one of the largest nonprofit health systems in the US, assisting patients and clinical staff across inpatient and outpatient departments.',
+    bullets: ['Built a front-desk data system that cut the time to log and retrieve patient information'],
   },
   {
     org: 'Desert Kidney Associates',
@@ -202,7 +213,7 @@ export const experience: ExperienceItem[] = [
     category: 'Clinical & Research',
     summary:
       'Shadowed nephrologist Dr. Prashant Kolar through inpatient rounds, outpatient consults, and dialysis management — chronic kidney disease staging, fluid/electrolyte management, and the intersection of diabetes and hypertension with renal outcomes.',
-    bullets: [],
+    bullets: ['Sat in on the patient-education conversations — where much of the disease course actually gets decided'],
   },
   {
     org: 'Physical Therapy',
@@ -228,6 +239,44 @@ export const experience: ExperienceItem[] = [
       'Cognitive Stimulation Therapy (CST) — group-based social stimulation, with smaller cognitive effects but measurable gains in mood and self-reported quality of life',
       'Argued the two are complementary rather than competing, and that a combined approach is worth testing',
     ],
+  },
+  {
+    org: 'Flare Review',
+    role: 'Director of Operations',
+    period: 'Oct 2025 – Aug 2026',
+    meta: '11 mos · Self-employed · Remote',
+    category: 'Leadership & Teaching',
+    summary:
+      'Ran operations for a student-led video editing nonprofit — scheduling, project intake, and hand-off between editors.',
+    bullets: [],
+  },
+  {
+    org: 'Schoolhouse.world',
+    role: 'Senior Tutor',
+    period: 'Nov 2023 – Jun 2026',
+    meta: '2 yrs 8 mos · Freelance · Remote',
+    category: 'Leadership & Teaching',
+    summary:
+      'Tutored one-on-one, building each plan around what the student was actually getting wrong rather than working through a fixed syllabus.',
+    bullets: ['Recruited and onboarded new tutors, extending the program beyond what one person could reach'],
+  },
+  {
+    org: 'Student meal program',
+    role: 'Volunteer Teacher and Fundraiser',
+    period: '2023 – 2025',
+    category: 'Leadership & Teaching',
+    summary: 'Raised $7,000 for student meal programs and taught in the classrooms that money paid for.',
+    bullets: ['Coached students on career paths — the part they asked for most'],
+  },
+  {
+    org: 'Arizona Tamil School',
+    role: 'Teaching Assistant',
+    period: '2016 – Present',
+    meta: '10 yrs',
+    category: 'Leadership & Teaching',
+    summary:
+      'Taught language and culture classes for a decade and coordinated the annual performances, from rehearsal scheduling through the night itself.',
+    bullets: [],
   },
 ];
 
