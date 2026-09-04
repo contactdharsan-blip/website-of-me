@@ -251,16 +251,16 @@ export const projects: Project[] = [
     name: 'Avorio',
     blurb: 'Native spaced-repetition app',
     description:
-      'Avorio is a cross-platform spaced-repetition flashcard app built on the FSRS-5 algorithm — algorithmically rigorous and genuinely pleasant to use, filling the gap between Anki (powerful but dated) and Quizlet (polished but algorithmically weak). One shared Rust core drives macOS, iOS, and Android; platform UIs are pure presentation calling through a UniFFI-generated facade.',
-    status: 'In development · macOS & iOS ~87%',
+      'Avorio is a native spaced-repetition flashcard app for macOS and iOS built on the FSRS-5 algorithm — the algorithmic rigor of Anki on a Mac and iPhone experience that actually feels like one, free with no account and no compromise. One shared Rust core drives every platform; platform UIs are pure presentation calling through a UniFFI-generated facade, with Android built on the same core.',
+    status: 'Live · Free on Mac & iPhone',
     featured: true,
     href: 'https://avorio.ai',
     tech: ['Rust', 'UniFFI', 'SwiftUI', 'Jetpack Compose', 'rusqlite', 'Supabase'],
     highlights: [
-      'FSRS-5 scheduling for optimal review intervals',
-      'Offline-first — on-device SQLite (WAL mode)',
+      'FSRS-5 scheduling — a fitted forgetting-curve model, not fixed intervals',
+      'Full Anki .apkg import; free, no account, works fully offline',
+      'Configurable daily new-card/review caps plus a 70–97% retention-target slider',
       'AI card generation via Anthropic / OpenAI / Ollama',
-      'Gamification: gems, streaks, in-app shop',
     ],
   },
   {
@@ -394,7 +394,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'What is Avorio?',
-    a: 'Avorio is a cross-platform spaced-repetition flashcard app built by Dharsan Kesavan on the FSRS-5 algorithm, with one shared Rust core driving native macOS, iOS, and Android apps.',
+    a: 'Avorio is a native spaced-repetition flashcard app for macOS and iOS built by Dharsan Kesavan on the FSRS-5 algorithm — free, no account, works offline — with one shared Rust core also driving an in-development Android app.',
   },
   {
     q: 'What is BioPath?',
