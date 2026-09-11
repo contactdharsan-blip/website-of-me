@@ -134,11 +134,11 @@
   /* Typography recipes */
   .typo-label  { @apply text-xs font-semibold uppercase tracking-wider; color: var(--color-text-tertiary); }
   .typo-badge  { @apply text-xs font-medium leading-none; }
-  .typo-body   { @apply text-sm sm:text-base leading-relaxed; color: var(--color-text-secondary); }
-  .typo-caption{ @apply text-xs sm:text-sm; color: var(--color-text-tertiary); }
-  .typo-card-heading { @apply text-base sm:text-lg font-medium; color: var(--color-text-primary); }
-  .typo-h3     { @apply text-lg sm:text-xl font-semibold; }
-  .typo-h4     { @apply text-base font-semibold; }
+  .typo-body   { @apply max-w-[68ch] text-sm sm:text-base leading-relaxed; color: var(--color-text-secondary); }
+  .typo-caption{ @apply text-xs leading-relaxed sm:text-sm; color: var(--color-text-tertiary); }
+  .typo-card-heading { @apply text-balance text-base sm:text-lg font-medium; color: var(--color-text-primary); }
+  .typo-h3     { @apply text-balance text-lg sm:text-xl font-semibold; }
+  .typo-h4     { @apply text-balance text-base font-semibold; }
   .typo-metric { @apply text-2xl sm:text-3xl font-bold tabular-nums; }
   .typo-mono   { @apply font-mono text-xs; color: var(--color-text-tertiary); }
 

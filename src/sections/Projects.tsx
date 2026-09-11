@@ -57,7 +57,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Highlights */}
         <ul className="mt-5 grid gap-2">
           {project.highlights.map((h) => (
-            <li key={h} className="flex items-start gap-2 text-sm text-text-secondary">
+            <li key={h} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary-400" />
               <span>{h}</span>
             </li>

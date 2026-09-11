@@ -62,9 +62,9 @@ function TimelineRow({ item, index }: { item: ExperienceItem; index: number }) {
         <p className="typo-body mt-3">{item.summary}</p>
 
         {item.bullets.length > 0 && (
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 max-w-[68ch] space-y-2.5">
             {item.bullets.map((b, i) => (
-              <li key={i} className="flex gap-2.5 text-sm text-text-secondary">
+              <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-text-secondary">
                 <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary-400" />
                 <span>{b}</span>
               </li>
