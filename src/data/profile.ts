@@ -175,9 +175,9 @@ export const experience: ExperienceItem[] = [
     summary:
       'Founded Cognifer Labs and built Avorio (avorio.ai), a native spaced-repetition app for Mac and iPhone that launched in July 2026.',
     bullets: [
-      'Built a shared Rust core for scheduling, storage, and Anki import across platforms via UniFFI',
-      'Integrated an AI layer with free on-device options and shipped subscriptions through Stripe and StoreKit',
-      'Currently porting to Android on the same core',
+      'Built one engine that handles scheduling, storage, and Anki import everywhere, so every platform behaves identically instead of quietly drifting apart',
+      'Added an AI layer with a free on-device option, and launched paid subscriptions',
+      'Porting to Android on the same foundation, not a rebuild',
     ],
   },
   {
@@ -300,16 +300,16 @@ export const projects: Project[] = [
     name: 'Avorio',
     blurb: 'Native spaced-repetition app',
     description:
-      'Avorio is a native spaced-repetition flashcard app for macOS and iOS built on the FSRS-5 algorithm — the algorithmic rigor of Anki on a Mac and iPhone experience that actually feels like one, free with no account and no compromise. One shared Rust core drives every platform; platform UIs are pure presentation calling through a UniFFI-generated facade, with Android built on the same core.',
+      "Avorio is a native flashcard app for macOS and iOS that resurfaces what you're about to forget right before you forget it — the scheduling rigor people love about Anki, in a Mac and iPhone experience that actually feels like one. Free, no account, works fully offline, with one shared engine keeping every platform in step as Android joins on the same foundation.",
     status: 'Live · Free on Mac & iPhone',
     featured: true,
     href: 'https://avorio.ai',
     tech: ['Rust', 'UniFFI', 'SwiftUI', 'Jetpack Compose', 'rusqlite', 'Supabase'],
     highlights: [
-      'FSRS-5 scheduling — a fitted forgetting-curve model, not fixed intervals',
-      'Full Anki .apkg import; free, no account, works fully offline',
-      'Configurable daily new-card/review caps plus a 70–97% retention-target slider',
-      'AI card generation via Anthropic / OpenAI / Ollama',
+      "Learns your personal forgetting curve instead of fixed intervals — cards come back exactly when you're about to lose them",
+      'Anki switchers keep everything: full deck, review history, and study habits carry over, nothing starts from zero',
+      'Set how much time you want to spend studying each day; the app decides which cards earn it',
+      'Turns a document, photo, or class note into ready-to-study cards',
     ],
   },
   {

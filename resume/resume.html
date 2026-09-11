@@ -149,21 +149,16 @@
     </div>
     <div class="sub">Avorio &mdash; native spaced-repetition learning app for macOS and iOS · <a href="https://avorio.ai">avorio.ai</a></div>
     <ul>
-      <li><b>Shipped to the App Store:</b> v1.0 approved July 2026 and v1.1 approved and released the day it was submitted;
-      the Mac build ships Developer ID-signed and notarized with Sparkle auto-updates.</li>
-      <li><b>Architected one shared Rust core</b> &mdash; FSRS-5 and SM-2 scheduling, rusqlite storage, Anki import/export, gamification,
-      AI routing &mdash; exposed to Swift and Kotlin through a single UniFFI interface, so three platforms run one implementation
-      rather than three that drift.</li>
-      <li><b>Built lossless Anki migration:</b> <i>.apkg</i>/<i>.colpkg</i> import preserves ease factors, intervals, lapses, review
-      history, media, cloze, and image occlusion behind a pre-commit diff report, then replays that review log to fit each learner&rsquo;s
-      own FSRS-5 parameters above a 1,000-review floor.</li>
-      <li><b>Shipped the AI layer</b> as a managed gateway with server-held keys and free model choice, plus zero-cost on-device paths
-      through Apple Intelligence and Ollama: document-to-cards with diagrams, per-card explanations, and a tutor that reads a card&rsquo;s
-      own scheduling signals to teach the point the learner keeps missing.</li>
-      <li><b>Owned backend and monetization:</b> Supabase with 66 Postgres migrations and 12 edge functions, Stripe checkout, and
-      RevenueCat/StoreKit subscriptions across three tiers &mdash; free flashcard core, paid cloud AI and Mac&ndash;iPhone sync. Localized
-      into eight languages beyond English, with ~1,480 Rust, Swift, and Kotlin tests gated in CI on every change; Android (Jetpack Compose) in progress
-      on the same core.</li>
+      <li><b>Shipped to the App Store:</b> v1.0 approved July 2026 and v1.1 approved and released the same day it was submitted,
+      with the Mac build available as a signed, self-updating direct download.</li>
+      <li><b>Designed one engine for every platform</b> so Mac, iPhone, and the Android app in progress stay identical instead of
+      quietly drifting apart as three separate builds.</li>
+      <li><b>Made switching from a competing app lossless:</b> a learner's full study history carries over on import &mdash; nothing
+      resets, nothing is re-learned from zero.</li>
+      <li><b>Shipped an AI study layer</b> with a free, on-device option so cost is never the reason a learner can't use it: turns a
+      document into ready-to-study material, explains a single concept on demand, and tutors toward whatever a learner keeps missing.</li>
+      <li><b>Owned the business model end to end:</b> free core product, paid tiers for AI and cross-device sync, checkout live on web
+      and both app stores, localized into eight languages, with an automated test suite gating every release.</li>
     </ul>
   </div>
 

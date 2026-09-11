@@ -121,11 +121,11 @@
     </div>
     <div class="sub">Avorio, a native spaced-repetition learning app for macOS and iOS. <a href="https://avorio.ai">avorio.ai</a></div>
     <ul>
-      <li>Shipped Avorio to the App Store: version 1.0 approved July 2026, and 1.1 approved and released the day it was submitted. The Mac app ships as a Developer ID-signed, notarized direct download with Sparkle auto-updates.</li>
-      <li>Built the product on one shared Rust core (FSRS-5 and SM-2 scheduling, rusqlite storage, Anki import and export, gamification, AI routing) exposed to Swift and Kotlin through a single UniFFI interface. Three platforms run one implementation instead of three that drift apart.</li>
-      <li>Made switching from Anki lossless. Importing .apkg and .colpkg keeps ease factors, intervals, lapses, review history, media, cloze, and image occlusion, with a diff report before anything commits. Avorio then replays that review log to fit the learner's own FSRS-5 parameters, above a 1,000-review floor where a fitted model would be worse than the default.</li>
-      <li>Shipped the AI layer as a managed gateway with server-held keys and free choice of model, plus free on-device paths through Apple Intelligence and Ollama. It turns a document into cards and diagrams, explains single cards, and runs a tutor that reads a card's scheduling signals to teach the point the learner keeps missing.</li>
-      <li>Ran the backend and the money: Supabase with 66 Postgres migrations and 12 edge functions, Stripe web checkout, and RevenueCat and StoreKit subscriptions across three tiers. The flashcard core is free; paid tiers cover cloud AI and optional Mac to iPhone sync. Localized into eight languages beyond English, with roughly 1,079 Rust, 245 Swift, and 160 Kotlin tests gated in CI on every change, and an Android build in Jetpack Compose in progress against the same core.</li>
+      <li>Shipped Avorio to the App Store — version 1.0 approved July 2026, and 1.1 approved and released the same day it was submitted — with the Mac build available as a signed, notarized direct download that updates itself.</li>
+      <li>Designed one core so every platform behaves identically instead of three implementations quietly drifting apart: a single engine handles scheduling, storage, Anki import/export, gamification, and AI routing, and both native UIs call straight into it.</li>
+      <li>Made switching from Anki lossless: importing a deck keeps its full history — ease factors, lapses, media, cloze, image occlusion — behind a review step before anything commits, then re-fits the learner's own forgetting-curve parameters from that history instead of starting them cold.</li>
+      <li>Shipped the AI layer with a free choice of model and free on-device paths, so cost is never the reason a learner can't use it: turns a document into cards and diagrams, explains a single card, and tutors toward whatever point the learner keeps missing.</li>
+      <li>Ran the backend and the business model: a free flashcard core, paid tiers for cloud AI and cross-device sync, checkout and subscriptions live on web and both app stores. Localized into eight languages, with an automated test suite gating every change, and Android in progress on the same core.</li>
     </ul>
   </div>
 
