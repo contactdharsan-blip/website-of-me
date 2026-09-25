@@ -21,3 +21,6 @@ yarn-error.log*
 
 # LinkedIn screenshot pack (large binaries, regenerable)
 linkedin-assets/
+
+# Targeted résumé — emailed privately, names a confidential engagement; source stays local
+resume/resume.html
