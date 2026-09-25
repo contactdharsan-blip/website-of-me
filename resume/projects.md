@@ -102,10 +102,15 @@ A single-user Python + SQLite application that reads Gmail, Drive, Calendar, not
 
 ---
 
-## OrgTruth
-*Meetings keep company documentation current*
+## Tradgent
+*Personal investing companion with a fenced paper-trading lane · private repo (Cognifer-Labs)*
 
-A solo-built tool, about 9,000 lines, that updates a company's documentation from what gets decided in its meetings. Applied to Y Combinator for the Fall 2026 batch.
+A companion that tracks contributions, allocation drift against rebalance bands, tax lots, wash sales, and dividend windows — and places no trades from its core: there is no broker write path there, and a test enforces it.
+
+- **Fenced signals lane.** Consumes news wires, SEC/EDGAR filings, Federal Reserve / Federal Register / Treasury feeds, GDELT, and daily bars; scores every headline; compiles a weighted 0–100 rating per instrument; sizes and submits orders to Alpaca's **paper** endpoint only, dry by default, on a launchd schedule. News can only shrink an allocation, never enlarge or forecast one.
+- **Money is never a float.** `Decimal` in Python, `INTEGER` cents in SQLite; the database has no `REAL` column and a trigger rejects one.
+- **Risk, not return.** Estimates concentration and correlation (e.g. how many independent bets a set of funds really is) and forecasts nothing.
+- 66 Python modules, 89 test files (2,330 test functions), 184 commits since 2026-08-24. *(Counts from `git ls-files`, 2026-09-25.)*
 
 ---
 

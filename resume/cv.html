@@ -249,10 +249,10 @@
   <h2>Other Software</h2>
   <div class="entry">
     <ul>
-      <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, and switching agents rebuilds context under a label reading "reconstructed, not resumed" rather than pretending the session moved. 10,400 lines, 117 tests.</li>
+      <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, verified by identity tests. 10,400 lines, 117 tests.</li>
       <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (184 modules, 18 source connectors, 3,200+ tests) that reads mail, iMessage, calendars, Canvas, notes, Slack, and GitHub on a schedule and extracts typed records: what you owe, what is owed to you, deadlines, and goal checkpoints, each linked back to the source item it came from. It returns a 6&nbsp;a.m. brief and a dashboard, with no chat interface and no vector database on purpose: the questions are fixed and known in advance, so the work belongs at ingest in plain SQL. It also serves a versioned personal fact base to other AI agents over MCP. A cheap triage tier sits in front of the model under a hard monthly spend cap, and across 3,687 real messages a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced.</li>
-      <li><b>OrgTruth</b>. A solo-built tool, about 9,000 lines, that keeps a company's documentation current by updating it from its meetings. Applied to Y Combinator for the Fall 2026 batch.</li>
-      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python gives each agent dual-process System 1 and System 2 reasoning, identity-threat detection, and a demographically biased media diet, so adoption depends on who the agent is and not only on how many neighbours already believe it.</li>
+      <li><b>Tradgent</b>. A personal investing companion in Python (66 modules, 2,300+ tests) that tracks contributions, allocation drift, tax lots, and wash sales, with no broker write path in its core, enforced by a test. A separately fenced signals lane scores news, SEC filings, and Federal Reserve and Treasury feeds into a rating per instrument and trades on paper only, dry by default.</li>
+      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python adds dual-process System 1 and System 2 reasoning and demographically biased media diets, so adoption depends on who the agent is, not only on how many neighbours already believe it.</li>
     </ul>
   </div>
 </section>
@@ -277,7 +277,7 @@
   </div>
   <div class="kv">
     <span class="kv-label">Programming</span>
-    <span>Rust, Swift and SwiftUI, Kotlin and Jetpack Compose, Python, TypeScript, C++. UniFFI, rusqlite, React and Next.js, Tauri.</span>
+    <span>Rust, Swift/SwiftUI, Kotlin/Jetpack Compose, Python, TypeScript, C++. UniFFI, rusqlite, React, Next.js, Tauri.</span>
   </div>
   <div class="kv">
     <span class="kv-label">Machine learning</span>
@@ -289,7 +289,7 @@
   </div>
   <div class="kv">
     <span class="kv-label">Business</span>
-    <span>Pricing and tiering, App Store review, code signing and notarization, localization, freelance delivery, fundraising.</span>
+    <span>Pricing and tiering, App Store review, notarization, localization, freelance delivery, fundraising.</span>
   </div>
 </section>
 
