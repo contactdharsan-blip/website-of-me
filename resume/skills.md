@@ -36,6 +36,7 @@
 - **Morgan fingerprint CNN / MPNN** — trained on BindingDB for binding affinity prediction across ~700 human proteins
 - **Tanimoto similarity** — structural drug analogy for side-effect and interaction transfer
 - **Anthropic / OpenAI / Ollama / Apple Intelligence** — LLM integration, managed gateway and on-device paths
+- **MCP servers** — exposing a personal fact base to other AI agents (Backglass)
 - Cross-validation of ML predictions against measured ChEMBL targets
 
 ### Architecture Patterns

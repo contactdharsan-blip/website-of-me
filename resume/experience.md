@@ -2,7 +2,7 @@
 
 ## Ventures and Products
 
-### Cognifer Labs — Co-Founder
+### Cognifer Labs — Founder
 *Mar 2026 – Present · Chandler, AZ · [avorio.ai](https://avorio.ai)*
 
 Building Avorio, a native spaced-repetition learning app for macOS and iOS, plus the infrastructure behind it.
@@ -40,7 +40,7 @@ Assisted patients and clinical staff across inpatient and outpatient departments
 ---
 
 ### Desert Kidney Associates — Physician Shadowing, Nephrology
-*2024 – Present · 120 hours*
+*2024 – 2026 · 120 hours*
 
 Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management. Followed chronic kidney disease staging, fluid and electrolyte management, and the way diabetes and hypertension end up as renal outcomes. Sat in on patient education about lifestyle change, which is where much of the disease course actually gets decided.
 

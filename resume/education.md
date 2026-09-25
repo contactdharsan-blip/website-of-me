@@ -1,9 +1,14 @@
 # Education
 
 ## Arizona State University
-*Dual B.S., Biological Sciences (Biomedical Sciences) + AI in Business · 2026 – Expected May 2030*
+*Dual B.S., Biological Sciences (Biomedical Sciences) + AI in Business · Aug 2026 – Expected May 2030*
 
 McKenna Life Sciences, Business and Entrepreneurship (MLSBE), inaugural cohort. A selective 30-student program run jointly by the W. P. Carey School of Business and The College of Liberal Arts and Sciences, awarding two bachelor's degrees plus an Entrepreneurship & Innovation certificate in four years.
+
+- Barrett, The Honors College
+- 2026 AI Scholar cohort (three badges due by the April 2027 ceremony)
+- Member, Sun Devil Satellite Laboratory (from Sep 2026)
+- Entered with 51 credit hours from AP exams
 
 ---
 

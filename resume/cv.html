@@ -93,11 +93,12 @@
   <div class="entry keep">
     <div class="row">
       <span><span class="org">Arizona State University</span>, Tempe, AZ</span>
-      <span class="meta">Expected May 2030</span>
+      <span class="meta">Aug 2026 – Expected May 2030</span>
     </div>
-    <div class="role">Dual B.S., Biological Sciences (Biomedical Sciences) and AI in Business</div>
+    <div class="role">Dual B.S., Biological Sciences (Biomedical Sciences) and AI in Business. Barrett, The Honors College.</div>
     <ul>
       <li>McKenna Life Sciences, Business and Entrepreneurship (MLSBE), <b>inaugural cohort</b>. A 30-student program run jointly by W.&thinsp;P. Carey and The College: two bachelor's degrees plus an Entrepreneurship and Innovation certificate in four years.</li>
+      <li>2026 AI Scholar cohort. Member, Sun Devil Satellite Laboratory. Entered with 51 credit hours from AP exams.</li>
     </ul>
   </div>
   <div class="entry keep">
@@ -116,7 +117,7 @@
 
   <div class="entry">
     <div class="row">
-      <span><span class="org">Cognifer Labs</span>, <span class="role">Co-Founder</span></span>
+      <span><span class="org">Cognifer Labs</span>, <span class="role">Founder</span></span>
       <span class="meta">Mar 2026 – Present</span>
     </div>
     <div class="sub">Avorio, a native spaced-repetition learning app for macOS and iOS. <a href="https://avorio.ai">avorio.ai</a></div>
@@ -168,7 +169,7 @@
   <div class="entry keep">
     <div class="row">
       <span><span class="org">Desert Kidney Associates</span>, <span class="role">Physician Shadowing, Nephrology</span></span>
-      <span class="meta">2024 – Present · 120 hours</span>
+      <span class="meta">2024 – 2026 · 120 hours</span>
     </div>
     <ul>
       <li>Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management. Followed chronic kidney disease staging, fluid and electrolyte management, and the way diabetes and hypertension end up as renal outcomes. Sat in on patient education about lifestyle change, which is where much of the disease course actually gets decided.</li>
@@ -249,8 +250,9 @@
   <div class="entry">
     <ul>
       <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, and switching agents rebuilds context under a label reading "reconstructed, not resumed" rather than pretending the session moved. 10,400 lines, 117 tests.</li>
-      <li><b>Backglass</b>. A local-first commitment ledger in Python (102 modules, 20 source connectors, 71 test files) that reads Gmail, Drive, Calendar, notes, iMessage, Slack, and GitHub on a schedule and extracts typed records: what you owe, what is owed to you, deadlines, and goal checkpoints, each linked back to the source item it came from. It returns a 6&thinsp;a.m. brief and a dashboard, with no chat interface and no vector database on purpose: the questions are fixed and known in advance, so the work belongs at ingest in plain SQL. A cheap triage tier sits in front of the model under a hard monthly spend cap, and across 3,687 real messages a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced.</li>
-      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python gives each agent dual-process System 1 and System 2 reasoning, identity-threat detection, and a demographically biased media diet, so adoption depends on who the agent is and not only on how many neighbours already believe it. Both write per-timestep state counts for analysis, and the C++ build ships a live SFML visualizer.</li>
+      <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (184 modules, 18 source connectors, 3,200+ tests) that reads mail, iMessage, calendars, Canvas, notes, Slack, and GitHub on a schedule and extracts typed records: what you owe, what is owed to you, deadlines, and goal checkpoints, each linked back to the source item it came from. It returns a 6&nbsp;a.m. brief and a dashboard, with no chat interface and no vector database on purpose: the questions are fixed and known in advance, so the work belongs at ingest in plain SQL. It also serves a versioned personal fact base to other AI agents over MCP. A cheap triage tier sits in front of the model under a hard monthly spend cap, and across 3,687 real messages a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced.</li>
+      <li><b>OrgTruth</b>. A solo-built tool, about 9,000 lines, that keeps a company's documentation current by updating it from its meetings. Applied to Y Combinator for the Fall 2026 batch.</li>
+      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python gives each agent dual-process System 1 and System 2 reasoning, identity-threat detection, and a demographically biased media diet, so adoption depends on who the agent is and not only on how many neighbours already believe it.</li>
     </ul>
   </div>
 </section>
@@ -279,7 +281,7 @@
   </div>
   <div class="kv">
     <span class="kv-label">Machine learning</span>
-    <span>Morgan-fingerprint CNN and MPNN training on BindingDB, cross-validation against measured data, Tanimoto similarity, LLM integration through Anthropic, OpenAI, and Ollama.</span>
+    <span>Morgan-fingerprint CNN and MPNN training on BindingDB, cross-validation against measured data, Tanimoto similarity, LLM integration through Anthropic, OpenAI, and Ollama, MCP servers.</span>
   </div>
   <div class="kv">
     <span class="kv-label">Infrastructure</span>
@@ -287,7 +289,7 @@
   </div>
   <div class="kv">
     <span class="kv-label">Business</span>
-    <span>Product pricing and tiering, App Store submission and review, code signing and notarization, localization, freelance delivery, fundraising, recruiting.</span>
+    <span>Pricing and tiering, App Store review, code signing and notarization, localization, freelance delivery, fundraising.</span>
   </div>
 </section>
 

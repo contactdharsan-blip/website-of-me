@@ -77,7 +77,7 @@ PubChem · ChEMBL · Reactome · Open Targets · DGIdb · OpenFDA · RxNorm · P
 
 ## Agent Bridge
 *Desktop app that drives Claude Code, Codex, and Cursor from one shell*
-[github.com/contactdharsan-blip/agent-bridge](https://github.com/contactdharsan-blip/agent-bridge)
+[github.com/Cognifer-Labs/agent-bridge](https://github.com/Cognifer-Labs/agent-bridge)
 
 Tauri + Rust + React. Each agent is spawned as a subprocess over the Agent Client Protocol (ACP), rendered through one accept/reject diff UI with zero per-agent branches.
 
@@ -89,15 +89,23 @@ Tauri + Rust + React. Each agent is spawned as a subprocess over the Agent Clien
 ---
 
 ## Backglass
-*Local-first commitment ledger*
-[github.com/contactdharsan-blip/backglass](https://github.com/contactdharsan-blip/backglass)
+*Local-first commitment ledger · open source (MIT)*
+[github.com/Cognifer-Labs/backglass](https://github.com/Cognifer-Labs/backglass)
 
 A single-user Python + SQLite application that reads Gmail, Drive, Calendar, notes, iMessage, Slack, GitHub, and Canvas on a schedule and extracts typed records — what you owe, what's owed to you, deadlines, and goal checkpoints — each linked back to the source item it came from. It returns a 6 a.m. brief and a dashboard you keep open.
 
 - **No chat interface, no vector database, no semantic search.** The queries are fixed and known in advance (what's due today, what's overdue, what's owed to me), so they're plain `WHERE` clauses over typed columns. The work happens once at ingest instead of repeatedly at query time.
 - **Local-first, BYOK.** No hosted service and no account; extraction calls whichever model backend the user configures (own Anthropic/DeepInfra key, or free via an existing Claude subscription through the Claude Code CLI).
 - **Two-tier triage-then-extract** under a hard monthly spend cap enforced in code, degrading to triage-only rather than silently overspending. Across 3,687 real iMessage items, a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced; batching by character budget cut one workload from 308 model calls to 55 with identical verdicts.
-- 102 Python modules, 20 source connectors, 71 test files. FastAPI + Jinja2 + HTMX dashboard, no frontend framework.
+- **Personal fact base served over MCP.** A `fact` table with a supersession history holds what is currently true about the owner; a read-only MCP server exposes it to other AI agent sessions.
+- 184 Python modules, 18 source connectors, 147 test files (3,281 test functions), 47 SQL migrations; more than 16,000 source items ingested. FastAPI + Jinja2 + HTMX dashboard, no frontend framework. *(Counts from `git ls-files` on main, 2026-09-25.)*
+
+---
+
+## OrgTruth
+*Meetings keep company documentation current*
+
+A solo-built tool, about 9,000 lines, that updates a company's documentation from what gets decided in its meetings. Applied to Y Combinator for the Fall 2026 batch.
 
 ---
 
