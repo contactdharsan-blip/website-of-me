@@ -6,7 +6,7 @@
 - **Rust** — systems programming, memory-safe cross-platform logic, FFI boundary design
 - **Swift** — SwiftUI, macOS 14+ / iOS 17+, Xcode toolchain, code signing and notarization
 - **Kotlin** — Jetpack Compose, Android SDK (minSdk 26)
-- **Python** — backend APIs, data pipelines, ML model training/inference
+- **Python** — backend APIs, data pipelines, ML model training/inference; Pydantic v2 data contracts, Polars, RDKit cheminformatics
 - **TypeScript / JavaScript** — Next.js App Router, React, Node.js
 - **C++** — agent-based simulation, SFML visualization
 

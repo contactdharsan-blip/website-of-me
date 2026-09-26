@@ -2,6 +2,18 @@
 
 ## Ventures and Products
 
+### VivaMed BioPharma — Paid Technical Intern
+*Aug 2026 – Present · 10–20 h/week alongside classes · Python, Pydantic, Polars, RDKit, Postgres*
+
+Computational drug-candidate screening, working with CTO Nick Harris.
+
+- Primary engineer on a computational screening platform for drug candidates: wrote most of its screening engines, the scoring and red-team review stages, and the orchestration that runs them end to end, so each run yields a reproducible, provenance-tracked evidence dossier. 300+ test files gate every change.
+- Built the data layer's safeguards: loaders and reconciliation over a 500 GB Postgres research warehouse (DepMap, ClinVar, FAERS), and a licence gate that stops any engine from reading a source whose terms bar that use — on by default, every bypass needing a recorded reason.
+- Merged the platform with the CTO's discovery-engine codebase into one pipeline of 19 cost-ordered gates, so cheap checks eliminate a candidate before expensive ones run, and pulled the scoring logic both had duplicated into one shared package, resolving a constant the two had silently disagreed on.
+- Hardened the CTO-led engine suite: verification gates, a default-deny network egress allowlist, database writes that fail loudly instead of silently, and an auto-generated project status site.
+
+---
+
 ### Cognifer Labs — Founder
 *Mar 2026 – Present · Chandler, AZ · [avorio.ai](https://avorio.ai)*
 

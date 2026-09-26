@@ -113,7 +113,21 @@
 </section>
 
 <section>
-  <h2>Ventures and Products</h2>
+  <h2>Engineering and Ventures</h2>
+
+  <div class="entry keep">
+    <div class="row">
+      <span><span class="org">VivaMed BioPharma</span>, <span class="role">Paid Technical Intern</span></span>
+      <span class="meta">Aug 2026 – Present</span>
+    </div>
+    <div class="sub">Computational drug-candidate screening. Python, Pydantic, Polars, RDKit, Postgres.</div>
+    <ul>
+      <li>Primary engineer on a computational screening platform for drug candidates: wrote most of its screening engines, the scoring and red-team review stages, and the orchestration that runs them end to end, so each run yields a reproducible, provenance-tracked evidence dossier. More than 300 test files gate every change.</li>
+      <li>Built the data layer's safeguards: loaders and reconciliation over a 500&nbsp;GB Postgres research warehouse (DepMap, ClinVar, FAERS), and a licence gate that stops any engine from reading a source whose terms bar that use. It is on by default, and every bypass needs a recorded reason.</li>
+      <li>Merged the platform with the CTO's discovery-engine codebase into one pipeline of 19 cost-ordered gates, so cheap checks eliminate a candidate before expensive ones run, and pulled the scoring logic both had duplicated into one shared package, resolving a constant the two had silently disagreed on.</li>
+      <li>Hardened the CTO-led engine suite with verification gates, a default-deny network egress allowlist, database writes that fail loudly instead of silently, and an auto-generated project status site.</li>
+    </ul>
+  </div>
 
   <div class="entry">
     <div class="row">
@@ -123,10 +137,10 @@
     <div class="sub">Avorio, a native spaced-repetition learning app for macOS and iOS. <a href="https://avorio.ai">avorio.ai</a></div>
     <ul>
       <li>Shipped Avorio to the App Store — version 1.0 approved July 2026, and 1.1 approved and released the same day it was submitted — with the Mac build available as a signed, notarized direct download that updates itself.</li>
-      <li>Designed one core so every platform behaves identically instead of three implementations quietly drifting apart: a single engine handles scheduling, storage, Anki import/export, gamification, and AI routing, and both native UIs call straight into it.</li>
-      <li>Made switching from Anki lossless: importing a deck keeps its full history — ease factors, lapses, media, cloze, image occlusion — behind a review step before anything commits, then re-fits the learner's own forgetting-curve parameters from that history instead of starting them cold.</li>
-      <li>Shipped the AI layer with a free choice of model and free on-device paths, so cost is never the reason a learner can't use it: turns a document into cards and diagrams, explains a single card, and tutors toward whatever point the learner keeps missing.</li>
-      <li>Ran the backend and the business model: a free flashcard core, paid tiers for cloud AI and cross-device sync, checkout and subscriptions live on web and both app stores. Localized into eight languages, with an automated test suite gating every change, and Android in progress on the same core.</li>
+      <li>Designed one core so every platform behaves identically: a single engine handles scheduling, storage, Anki import and export, gamification, and AI routing, and both native UIs call straight into it.</li>
+      <li>Made switching from Anki lossless: a deck keeps its full history, media, cloze, and image occlusion behind a review step, then re-fits the learner's own forgetting-curve parameters from that history.</li>
+      <li>Shipped an AI layer with free on-device paths, so cost is never the barrier: document-to-cards with diagrams, per-card explanations, and a tutor aimed at whatever the learner keeps missing.</li>
+      <li>Ran the backend and business model: free flashcard core, paid tiers for cloud AI and sync, checkout live on web and both app stores, eight languages, a test suite gating every change, and Android in progress on the same core.</li>
     </ul>
   </div>
 
@@ -137,10 +151,9 @@
     </div>
     <div class="sub">Drug interaction checker and compound body-impact analysis. <a href="https://biopath.space">biopath.space</a></div>
     <ul>
-      <li>Built a computational pharmacology tool that answers one question end to end: what will this compound do inside a body, and is it safe with what someone already takes. It starts from a drug name, plant photo, plant name, or pill imprint.</li>
-      <li>Connected ten scientific databases, each holding one piece of the answer and none of the others (PubChem, ChEMBL, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, PlantNet, Dr. Duke's). The pipeline resolves identity, finds binding targets, maps them onto 200+ pathways, scores organ impact, and returns interaction, dosage, and pregnancy safety.</li>
-      <li>Trained a Morgan-fingerprint CNN and MPNN on BindingDB to predict binding affinity across roughly 700 human proteins, covering obscure natural products and novel molecules with no measured data. Predictions are cross-checked against measured ChEMBL targets: agreement raises confidence, disagreement is flagged rather than hidden.</li>
-      <li>Used Tanimoto structural similarity at a 0.70 threshold to carry side effects, pregnancy categories, and interaction risk over from analogous known drugs. Every prediction shows its provenance and confidence rather than a bare number.</li>
+      <li>Built a computational pharmacology tool that answers what a compound will do inside a body and whether it is safe with what someone already takes, starting from a drug name, plant photo, plant name, or pill imprint.</li>
+      <li>Connected ten scientific databases (PubChem, ChEMBL, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, PlantNet, Dr. Duke's) into one pipeline: identity, binding targets, 200+ pathways, organ impact, then interaction, dosage, and pregnancy safety.</li>
+      <li>Trained a Morgan-fingerprint CNN and MPNN on BindingDB to predict binding affinity across roughly 700 human proteins for compounds with no measured data, cross-checked against measured ChEMBL targets with disagreement flagged rather than hidden. Tanimoto similarity at 0.70 carries side effects and interaction risk over from analogous known drugs.</li>
     </ul>
   </div>
 
@@ -150,7 +163,7 @@
       <span class="meta">2025 – 2026</span>
     </div>
     <ul>
-      <li>Built the site and backend for a bilingual AI phone assistant sold to solo contractors in roofing, HVAC, and plumbing. It answers the calls an owner cannot take from a roof, qualifies the job, books an estimate with drive-time routing, and texts back a summary, switching between English and Spanish mid-sentence. Next.js on Vercel.</li>
+      <li>Built the site and backend for a bilingual AI phone assistant for solo contractors: it answers the calls an owner cannot take, qualifies the job, books an estimate with drive-time routing, and texts back a summary in English or Spanish. Next.js on Vercel.</li>
     </ul>
   </div>
 </section>
@@ -172,7 +185,7 @@
       <span class="meta">2024 – 2026 · 120 hours</span>
     </div>
     <ul>
-      <li>Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management. Followed chronic kidney disease staging, fluid and electrolyte management, and the way diabetes and hypertension end up as renal outcomes. Sat in on patient education about lifestyle change, which is where much of the disease course actually gets decided.</li>
+      <li>Shadowed Dr. Prashant Kolar through inpatient rounds, outpatient consultations, and dialysis management: CKD staging, fluid and electrolyte management, and how diabetes and hypertension become renal outcomes, including patient education on lifestyle change.</li>
     </ul>
   </div>
   <div class="entry keep">
@@ -200,7 +213,7 @@
       <span class="meta">Sept 2025</span>
     </div>
     <ul>
-      <li>Wrote a literature review for <i>Mindful Mental Health</i> on Medium comparing Mnemonic Strategy Training and Cognitive Stimulation Therapy. Worked through the neuroimaging evidence and the published effect sizes for each, showed why the two cannot be compared head-to-head — different outcome measures, different patient populations — and argued they are complementary rather than competing.</li>
+      <li>Compared Mnemonic Strategy Training and Cognitive Stimulation Therapy for <i>Mindful Mental Health</i> on Medium across the neuroimaging evidence and published effect sizes; showed why the two cannot be compared head-to-head (different outcome measures and patient populations) and argued they are complementary.</li>
     </ul>
   </div>
 </section>
@@ -222,7 +235,7 @@
       <span class="meta">Nov 2023 – Jun 2026</span>
     </div>
     <ul>
-      <li>Tutored one on one, building each plan around what the student was actually getting wrong. Recruited and onboarded new tutors, which is what let the program reach more students than any one person could.</li>
+      <li>Tutored one on one against what each student was actually getting wrong; recruited and onboarded new tutors.</li>
     </ul>
   </div>
   <div class="entry keep">
@@ -231,7 +244,7 @@
       <span class="meta">2023 – 2025</span>
     </div>
     <ul>
-      <li>Raised $7,000 for student meal programs and taught in the classrooms that money paid for. Also coached students on career paths, the part they asked for most.</li>
+      <li>Raised $7,000 for student meal programs and taught in the classrooms that money paid for.</li>
     </ul>
   </div>
   <div class="entry keep">
@@ -240,7 +253,7 @@
       <span class="meta">10+ years</span>
     </div>
     <ul>
-      <li>Taught language and culture classes for a decade and coordinated the annual performances, from rehearsal scheduling through the night itself.</li>
+      <li>Taught language and culture classes for a decade and coordinated the annual performances.</li>
     </ul>
   </div>
 </section>
@@ -250,9 +263,9 @@
   <div class="entry">
     <ul>
       <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, verified by identity tests. 10,400 lines, 117 tests.</li>
-      <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (184 modules, 18 source connectors, 3,200+ tests) that reads mail, iMessage, calendars, Canvas, notes, Slack, and GitHub on a schedule and extracts typed records: what you owe, what is owed to you, deadlines, and goal checkpoints, each linked back to the source item it came from. It returns a 6&nbsp;a.m. brief and a dashboard, with no chat interface and no vector database on purpose: the questions are fixed and known in advance, so the work belongs at ingest in plain SQL. It also serves a versioned personal fact base to other AI agents over MCP. A cheap triage tier sits in front of the model under a hard monthly spend cap, and across 3,687 real messages a zero-cost pre-filter removed 10.9% of the volume with zero disagreement against the model verdicts it replaced.</li>
+      <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (184 modules, 18 source connectors, 3,200+ tests). It reads mail, messages, calendars, Canvas, and notes on a schedule and extracts typed records, each linked to its source: what you owe, what is owed to you, deadlines, and goal checkpoints. No chat interface and no vector database, on purpose: the questions are known in advance, so the work belongs at ingest in plain SQL. It serves a versioned personal fact base to other AI agents over MCP, and a zero-cost pre-filter removed 10.9% of 3,687 real messages with zero disagreement against the model verdicts it replaced.</li>
       <li><b>Tradgent</b>. A personal investing companion in Python (66 modules, 2,300+ tests) that tracks contributions, allocation drift, tax lots, and wash sales, with no broker write path in its core, enforced by a test. A separately fenced signals lane scores news, SEC filings, and Federal Reserve and Treasury feeds into a rating per instrument and trades on paper only, dry by default.</li>
-      <li><b>Misinformation contagion simulators</b>. Two agent-based models of how a claim spreads through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, with contact probability weighted by shared school, workplace, age, and ethnicity, and a false claim carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> in 2018. A second model in Python adds dual-process System 1 and System 2 reasoning and demographically biased media diets, so adoption depends on who the agent is, not only on how many neighbours already believe it.</li>
+      <li><b>Misinformation contagion simulators</b>. Two agent-based models of a claim spreading through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, contact weighted by shared school, workplace, age, and ethnicity, with false claims carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> (2018). The Python build adds System 1 and System 2 reasoning and biased media diets.</li>
     </ul>
   </div>
 </section>
@@ -273,15 +286,15 @@
   <h2>Skills</h2>
   <div class="kv">
     <span class="kv-label">Biomedical</span>
-    <span>Pharmacology: drug mechanisms, receptor binding, ADME, drug-drug interactions. Bioinformatics databases: PubChem, ChEMBL, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, DrugBank. Renal physiology. Literature review and effect-size interpretation.</span>
+    <span>Pharmacology: drug mechanisms, receptor binding, ADME, drug-drug interactions. Biomedical data: PubChem, ChEMBL, BindingDB, Reactome, Open Targets, DGIdb, OpenFDA, RxNorm, DrugBank, DepMap, ClinVar, FAERS. Renal physiology. Literature review and effect-size interpretation.</span>
   </div>
   <div class="kv">
     <span class="kv-label">Programming</span>
-    <span>Rust, Swift/SwiftUI, Kotlin/Jetpack Compose, Python, TypeScript, C++. UniFFI, rusqlite, React, Next.js, Tauri.</span>
+    <span>Rust, Swift/SwiftUI, Kotlin/Jetpack Compose, Python (Pydantic, Polars), TypeScript, C++. UniFFI, rusqlite, React, Next.js, Tauri.</span>
   </div>
   <div class="kv">
     <span class="kv-label">Machine learning</span>
-    <span>Morgan-fingerprint CNN and MPNN training on BindingDB, cross-validation against measured data, Tanimoto similarity, LLM integration through Anthropic, OpenAI, and Ollama, MCP servers.</span>
+    <span>Morgan-fingerprint CNN and MPNN training on BindingDB, cross-validation against measured data, Tanimoto similarity, RDKit, LLM integration through Anthropic, OpenAI, and Ollama, MCP servers.</span>
   </div>
   <div class="kv">
     <span class="kv-label">Infrastructure</span>

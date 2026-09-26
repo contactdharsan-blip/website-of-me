@@ -162,8 +162,13 @@ export const experience: ExperienceItem[] = [
     meta: '2 mos · Contract',
     category: 'Software',
     summary:
-      'Agentic AI tooling for computational biology research — MCP servers, in-silico analysis pipelines, and the data infrastructure behind them, with biweekly written findings summaries for the research leads.',
-    bullets: ['10–20 hrs/week alongside a dual-degree course load at ASU'],
+      'Primary engineer on a computational screening platform for drug candidates — most of its screening engines, the scoring and red-team review stages, and the orchestration that runs them end to end, so each run yields a reproducible, provenance-tracked evidence dossier.',
+    bullets: [
+      'Built loaders and reconciliation over a 500 GB Postgres research warehouse (DepMap, ClinVar, FAERS), plus a licence gate that stops any engine from reading a source whose terms bar that use — on by default, every bypass needing a recorded reason',
+      'Merged the platform with the CTO’s discovery-engine codebase into one pipeline of 19 cost-ordered gates, and pulled the scoring logic both had duplicated into one shared package',
+      'Hardened the CTO-led engine suite: verification gates, a default-deny network egress allowlist, and database writes that fail loudly instead of silently',
+      '10–20 hrs/week alongside a dual-degree course load at ASU · Python, Pydantic, Polars, RDKit, Postgres',
+    ],
   },
   {
     org: 'Cognifer Labs',
