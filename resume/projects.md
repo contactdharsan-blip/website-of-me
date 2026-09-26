@@ -63,7 +63,7 @@ input → resolve chemical identity
 For compounds with no measured data — obscure natural products, novel molecules — BioPathML predicts binding affinity across ~700 human proteins using a Morgan-fingerprint CNN / MPNN trained on BindingDB. When an ML prediction agrees with a measured ChEMBL target, confidence is boosted; when they conflict, it's flagged rather than hidden. Tanimoto similarity (≥ 0.70) transfers side effects, pregnancy categories, and interaction risk from structurally analogous known drugs.
 
 ### Data sources integrated
-PubChem · ChEMBL · Reactome · Open Targets · DGIdb · OpenFDA · RxNorm · PlantNet · Dr. Duke's Phytochemical Database
+PubChem · ChEMBL · Reactome · Open Targets · DGIdb · OpenFDA · RxNorm · PlantNet · Dr. Duke's Phytochemical Database · Drugs.com (pill imprint ID)
 
 ### Stack
 | Layer | Technology |
