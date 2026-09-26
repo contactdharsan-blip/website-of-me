@@ -77,9 +77,9 @@ Worked through the neuroimaging evidence, showed why the two interventions' effe
 ## Leadership and Teaching
 
 ### Flare Review — Director of Operations
-*Oct 2025 – Present · Remote*
+*Oct 2025 – Aug 2026 · Remote*
 
-Run operations for a student-led video editing nonprofit: scheduling, project intake, and hand-off between editors.
+Ran operations for a student-led video editing nonprofit: scheduling, project intake, and hand-off between editors.
 
 ---
 

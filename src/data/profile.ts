@@ -33,8 +33,8 @@ export interface SocialLink {
 
 // TODO(you): replace empty hrefs. Links with href === '' are hidden automatically.
 export const socials: SocialLink[] = [
-  { label: 'GitHub', href: '', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dharsan-kesavan-22927a285/', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/contactdharsan-blip', icon: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dharsan-kesavan', icon: 'linkedin' },
   { label: 'X / Twitter', href: '', icon: 'twitter' },
   {
     label: 'Medium',
@@ -51,7 +51,7 @@ export const about = {
   // Keywords in {braces} render as highlighted accent text.
   paragraphs: [
     "I'm a pre-medical student in Arizona State's inaugural {McKenna (MLSBE)} cohort, earning dual degrees in {AI in Business} and {Biomedical Sciences} — all while shipping production software. My work lives where rigorous life-science knowledge meets {systems-level engineering}.",
-    'On the software side I architect {offline-first}, cross-platform apps around a single {Rust} core, and build {ML} pipelines that integrate a dozen siloed scientific databases. On the clinical side I shadow in {nephrology}, volunteer in {hospital care}, and publish {literature reviews} in neuroscience.',
+    'On the software side I architect {offline-first}, cross-platform apps around a single {Rust} core, and build {ML} pipelines that integrate a dozen siloed scientific databases. On the clinical side I volunteer in {hospital care}, have shadowed in {nephrology}, and publish {literature reviews} in neuroscience.',
     "The throughline: I like hard problems where getting the {domain} right matters as much as getting the {code} right.",
   ],
   highlights: [
@@ -208,7 +208,7 @@ export const experience: ExperienceItem[] = [
   {
     org: 'Desert Kidney Associates',
     role: 'Physician Shadow — Nephrology',
-    period: '2024 – Present',
+    period: '2024 – 2026',
     meta: '120 hours',
     category: 'Clinical & Research',
     summary:
@@ -335,7 +335,7 @@ export const projects: Project[] = [
       "Desktop app (Tauri + Rust + React) that drives Claude Code, Codex, and Cursor from one unified shell — spawning each as a subprocess over the Agent Client Protocol (ACP), rendering one accept/reject diff UI with zero per-agent branches. It exists to solve the seam between AI coding tools: a Projection Engine round-trips one canonical config into each agent's native format (MCP JSON/TOML, skills, instructions), a Handoff Bridge honestly reconstructs context when switching agents (labeled 'reconstructed, not resumed', never silently migrated), and a cross-agent Profile Skill merges usage data from all three tools into one coder profile with confidence-weighted scoring.",
     status: 'In development · ~85%',
     featured: true,
-    repo: 'https://github.com/contactdharsan-blip/agent-bridge',
+    repo: 'https://github.com/Cognifer-Labs/agent-bridge',
     tech: [
       'Rust',
       'TypeScript',
@@ -362,16 +362,34 @@ export const projects: Project[] = [
     name: 'Backglass',
     blurb: 'Personal commitment ledger + morning brief',
     description:
-      'Backglass reads Gmail, Google Drive, a notes app, and a calendar on a schedule, extracts typed records — commitments made, commitments owed, deadlines, goal progress — and plans the day against actual available capacity. Single-user and local-first: the ledger, database, and dashboard never leave the machine, and every extraction call is BYO-key (Anthropic/DeepInfra, or free via an existing Claude Code subscription).',
-    status: 'In development · Core pipeline built',
+      'Backglass reads mail, messages, calendars, Canvas, and notes on a schedule, extracts typed records — commitments made, commitments owed, deadlines, goal progress — and plans the day against actual available capacity. Single-user and local-first: the ledger, database, and dashboard never leave the machine, and every extraction call is BYO-key (Anthropic/DeepInfra, or free via an existing Claude Code subscription).',
+    status: 'Open source · MIT',
     featured: true,
+    repo: 'https://github.com/Cognifer-Labs/backglass',
     tech: ['Python', 'FastAPI', 'Pydantic', 'Tauri', 'React', 'TypeScript', 'Anthropic API', 'Google Workspace APIs'],
     highlights: [
       'Deterministic ingest-time extraction instead of runtime vector search — known queries computed once, not chat/RAG',
       'Sends a two-minute morning brief at 06:00 and serves a live dashboard; scheduling engine plans the day against real capacity',
       'No automatic calendar writes — every proposed change requires explicit accept',
       'MIT-licensed, single-user, no account and no hosted service; text only leaves the machine via the model backend the user configures',
-      'Python/FastAPI core with its own pytest + mypy + ruff-gated test suite, plus a Tauri + React desktop shell',
+      'Keeps a personal fact base with a supersession history and serves it read-only to other AI agents over an MCP server',
+      '184 Python modules, 18 source connectors, 3,200+ tests gated by pytest + mypy + ruff, plus a Tauri + React desktop shell',
+    ],
+  },
+  {
+    name: 'Tradgent',
+    blurb: 'Investing companion with a fenced paper-trading lane',
+    description:
+      'Tradgent is a personal investing companion: it tracks contributions, checks whether an allocation has drifted outside its rebalance bands, and watches tax lots, wash sales, and dividend windows — placing no trades, because the core has no broker write path and a test enforces that. A separately fenced signals lane scores news wires, SEC filings, and Federal Reserve and Treasury feeds into a rating per instrument and trades a paper account only, dry by default.',
+    status: 'In development',
+    featured: true,
+    tech: ['Python', 'SQLite', 'Alpaca (paper)', 'SEC EDGAR', 'GDELT', 'launchd'],
+    highlights: [
+      'Alerts by default; orders only on paper, only when asked — nothing in the repo can reach a broker holding real funds',
+      'Money is never a float: Decimal in Python, integer cents in SQLite, and a trigger that rejects a REAL column',
+      'News is an unsigned uncertainty signal — it can shrink an allocation, never enlarge or forecast one',
+      'Measures risk (concentration, correlation, worst-month cost) and forecasts no return',
+      '66 Python modules, 2,300+ tests',
     ],
   },
 ];
@@ -401,7 +419,7 @@ export const education = {
   school: 'Arizona State University',
   degree: 'Dual B.S. — AI in Business + Biological Sciences (Biomedical Sciences)',
   period: '2026 – Present',
-  track: 'McKenna (MLSBE) · Inaugural Cohort',
+  track: 'Barrett Honors · McKenna (MLSBE) Inaugural Cohort',
   note: "McKenna Life Sciences, Business and Entrepreneurship (MLSBE) — a selective 30-student cohort program run jointly by W. P. Carey and The College of Liberal Arts and Sciences. Two bachelor's degrees plus an Entrepreneurship & Innovation certificate in four years, training leaders at the intersection of medicine, biotech, and business.",
   coursework: ['Biomedical Sciences', 'AI in Business', 'Biochemistry', 'Human Physiology', 'Entrepreneurship & Innovation'],
   testing: [{ test: 'SAT', score: '1530', percentile: '~99th' }],
@@ -437,7 +455,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'What does Dharsan Kesavan study and build?',
-    a: 'Dharsan Kesavan studies biomedical sciences and AI on a pre-medical track while building production software — shadowing in nephrology and volunteering in hospital care alongside Rust, Swift, and machine-learning projects.',
+    a: 'Dharsan Kesavan studies biomedical sciences and AI on a pre-medical track while building production software, with nephrology shadowing and hospital volunteering alongside Rust, Swift, and machine-learning projects.',
   },
 ];
 
