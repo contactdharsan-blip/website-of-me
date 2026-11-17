@@ -3,7 +3,7 @@
 ## Ventures and Products
 
 ### VivaMed BioPharma — Paid Technical Intern
-*Aug 2026 – Present · 10–20 h/week alongside classes · Python, Pydantic, Polars, RDKit, Postgres*
+*Sep 2026 – Present · 10–20 h/week alongside classes · Python, Pydantic, Polars, RDKit, Postgres*
 
 Computational drug-candidate screening, working with CTO Nick Harris.
 

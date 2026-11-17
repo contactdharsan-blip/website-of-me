@@ -2,8 +2,8 @@
 <!--
   CV source — MLSBE / venture-and-clinical framing, two pages.
   Regenerate PDF (filename is name-bearing so search/AI engines bind it to the person):
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
-      --print-to-pdf="public/Dharsan-Kesavan-CV.pdf" --no-pdf-header-footer "file://$PWD/resume/cv.html"
+    ~/.claude/scripts/webkit-pdf/webkit-pdf resume/cv.html public/Dharsan-Kesavan-CV.pdf --paper letter --margins 0.4,0.58,0.4,0.58
+  (macOS WebKit since 2026-10-19, not Chromium; margins mirror @page below. Check: 2 pages.)
   vite build copies public/ → dist/ automatically, so no manual dist copy is needed.
 -->
 <html lang="en">
@@ -40,7 +40,7 @@
   .links span + span::before { content: "  ·  "; color: #a8adb2; }
 
   /* ── Sections ── */
-  section { margin-top: 5pt; }
+  section { margin-top: 4.8pt; }
   h2 {
     font-size: 9.1pt;
     font-weight: 700;
@@ -53,7 +53,7 @@
   }
 
   /* ── Entries ── */
-  .entry { margin-bottom: 3.8pt; }
+  .entry { margin-bottom: 3.4pt; }
   .entry.keep { break-inside: avoid; }
   .entry:last-child { margin-bottom: 0; }
   .row {
@@ -118,7 +118,7 @@
   <div class="entry keep">
     <div class="row">
       <span><span class="org">VivaMed BioPharma</span>, <span class="role">Paid Technical Intern</span></span>
-      <span class="meta">Aug 2026 – Present</span>
+      <span class="meta">Sep 2026 – Present</span>
     </div>
     <div class="sub">Computational drug-candidate screening. Python, Pydantic, Polars, RDKit, Postgres.</div>
     <ul>
@@ -197,12 +197,6 @@
       <li>Observed outpatient rehabilitation with physical therapist Salman Ashraf: gait and movement assessment, therapeutic exercise progression, manual therapy, and the arc from injury back to function.</li>
     </ul>
   </div>
-  <div class="entry keep">
-    <div class="row">
-      <span><span class="org">Emergency Medical Technician</span>, <span class="role">training in progress</span></span>
-      <span class="meta">2026</span>
-    </div>
-  </div>
 </section>
 
 <section>
@@ -263,8 +257,9 @@
   <div class="entry">
     <ul>
       <li><b>Agent Bridge</b>. A Tauri desktop app in Rust and React that drives Claude Code, Codex, and Cursor from one shell over the Agent Client Protocol. One canonical config projects into each tool's native format and round-trips back unchanged, verified by identity tests. 10,400 lines, 117 tests.</li>
-      <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (184 modules, 18 source connectors, 3,200+ tests). It reads mail, messages, calendars, Canvas, and notes on a schedule and extracts typed records, each linked to its source: what you owe, what is owed to you, deadlines, and goal checkpoints. No chat interface and no vector database, on purpose: the questions are known in advance, so the work belongs at ingest in plain SQL. It serves a versioned personal fact base to other AI agents over MCP, and a zero-cost pre-filter removed 10.9% of 3,687 real messages with zero disagreement against the model verdicts it replaced.</li>
-      <li><b>Tradgent</b>. A personal investing companion in Python (66 modules, 2,300+ tests) that tracks contributions, allocation drift, tax lots, and wash sales, with no broker write path in its core, enforced by a test. A separately fenced signals lane scores news, SEC filings, and Federal Reserve and Treasury feeds into a rating per instrument and trades on paper only, dry by default.</li>
+      <li><b>Backglass</b>. An open-source (MIT), local-first commitment ledger in Python (188 modules, 18 source connectors, 4,600+ tests). It reads mail, messages, calendars, Canvas, and notes on a schedule and extracts typed records, each linked to its source: what you owe, what is owed to you, deadlines, and goal checkpoints. The questions it answers are known in advance, so the work happens once at ingest and the reports are plain SQL. It serves a versioned personal fact base to other AI agents over MCP, and a zero-cost pre-filter removed 10.9% of 3,687 real messages with zero disagreement against the model verdicts it replaced.</li>
+      <li><b>Tradgent</b>. A personal investing companion in Python (129 modules, 7,600+ tests) that tracks contributions, allocation drift, tax lots, and wash sales, with no broker write path in its core, enforced by a test. A separately fenced signals lane scores news, SEC filings, and Federal Reserve and Treasury feeds into a rating per instrument and trades on paper only, dry by default.</li>
+      <li><b>OrgTruth</b>. A Next.js app that turns meeting transcripts into per-project state documents, with every change linked to the meeting that caused it.</li>
       <li><b>Misinformation contagion simulators</b>. Two agent-based models of a claim spreading through a synthetic Phoenix. The C++ and SFML build runs 10,000 agents over 690 steps on an SEDPNR state model, contact weighted by shared school, workplace, age, and ethnicity, with false claims carrying the six-fold transmission advantage Vosoughi and colleagues measured in <i>Science</i> (2018). The Python build adds System 1 and System 2 reasoning and biased media diets.</li>
     </ul>
   </div>

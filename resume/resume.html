@@ -3,9 +3,11 @@
   Résumé source — targeted two-page version (health-tech engineering + clinical).
   Distinct from resume/cv.html, which remains the site-linked CV. Output goes to ~/Downloads on purpose:
   this version is emailed directly, NOT published to dharsankesavan.com.
-  Regenerate PDF:
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
-      --print-to-pdf="$HOME/Downloads/Dharsan-Kesavan-Resume.pdf" --no-pdf-header-footer "file://$PWD/resume/resume.html"
+  Regenerate PDF (macOS WebKit, not Chromium; since 2026-09-27; margins mirror @page below, which WebKit's print
+  path ignores). Output matched the last Chrome build: 2 pages, same page split, same 6 links, identical text:
+    ~/.claude/scripts/webkit-pdf/webkit-pdf resume/resume.html "$HOME/Downloads/Dharsan-Kesavan-Resume.pdf" \
+      --paper letter --margins 0.38,0.6,0.38,0.6
+  Check the page count afterwards: pdfinfo "$HOME/Downloads/Dharsan-Kesavan-Resume.pdf" | grep Pages   (must be 2)
 -->
 <html lang="en">
 <head>
@@ -71,7 +73,7 @@
   .meta { font-size: 8.7pt; color: #4a4f55; white-space: nowrap; }
   .sub { font-size: 8.9pt; color: #4a4f55; font-style: italic; margin-top: 0.5pt; }
   ul { margin: 2pt 0 0 12pt; }
-  li { margin-bottom: 1.45pt; orphans: 2; widows: 2; }
+  li { margin-bottom: 1.3pt; orphans: 2; widows: 2; }
   li:last-child { margin-bottom: 0; }
   li::marker { color: #7a8087; }
 
@@ -135,7 +137,7 @@
   <div class="entry keep">
     <div class="row">
       <span><span class="org">VivaMed BioPharma</span>, <span class="role">Paid Technical Intern</span></span>
-      <span class="meta">Aug 2026 &ndash; Present</span>
+      <span class="meta">Sep 2026 &ndash; Present</span>
     </div>
     <div class="sub">Computational drug-candidate screening &middot; Python, Pydantic, Polars, RDKit, Postgres</div>
     <ul>
@@ -230,12 +232,6 @@
       <span class="meta">2023 · 80 hours</span>
     </div>
   </div>
-  <div class="entry keep">
-    <div class="row">
-      <span><span class="org">Emergency Medical Technician</span>, <span class="role">certification training in progress</span></span>
-      <span class="meta">2026</span>
-    </div>
-  </div>
 </section>
 
 <section>
@@ -258,13 +254,14 @@
   <h2>Additional Technical Work</h2>
   <div class="entry">
     <ul>
-      <li><b>Backglass</b> &mdash; open-source (MIT), local-first personal ledger in Python (184 modules, 18 source connectors, 3,200+ tests)
-      that extracts typed records &mdash; obligations, deadlines, goal checkpoints &mdash; from 16,000+ mail, message, calendar, and Canvas
+      <li><b>Backglass</b> &mdash; open-source (MIT), local-first personal ledger in Python (188 modules, 18 source connectors, 4,600+ tests)
+      that extracts typed records &mdash; obligations, deadlines, goal checkpoints &mdash; from 19,000+ mail, message, calendar, and Canvas
       items, each linked to its source. Serves a versioned personal fact base to other AI agents over MCP; a two-tier triage pipeline under a
       hard spend cap cut one workload from 308 model calls to 55 with identical verdicts.</li>
-      <li><b>Tradgent</b> &mdash; personal investing companion in Python (66 modules, 2,300+ tests) that tracks contributions, allocation drift,
+      <li><b>Tradgent</b> &mdash; personal investing companion in Python (129 modules, 7,600+ tests) that tracks contributions, allocation drift,
       tax lots, and wash sales with no broker write path in its core, enforced by a test. A separately fenced signals lane scores news, SEC
       filings, and Federal Reserve and Treasury feeds into per-instrument ratings and trades on paper only, dry by default.</li>
+      <li><b>OrgTruth</b> &mdash; Next.js app that turns meeting transcripts into per-project state docs, each change cited to its meeting.</li>
       <li><b>Agent Bridge</b> &mdash; Tauri desktop app (Rust + React) driving Claude Code, Codex, and Cursor from one shell over the Agent Client
       Protocol. One canonical config projects into each tool&rsquo;s native format and round-trips back unchanged, verified by identity tests.
       10,400 lines, 117 tests.</li>
