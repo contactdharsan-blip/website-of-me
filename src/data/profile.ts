@@ -158,8 +158,8 @@ export const experience: ExperienceItem[] = [
   {
     org: 'VivaMed BioPharma',
     role: 'Paid Technical Intern',
-    period: 'Aug 2026 – Present',
-    meta: '2 mos · Contract',
+    period: 'Sep 2026 – Present',
+    meta: '3 mos · Contract',
     category: 'Software',
     summary:
       'Primary engineer on a computational screening platform for drug candidates — most of its screening engines, the scoring and red-team review stages, and the orchestration that runs them end to end, so each run yields a reproducible, provenance-tracked evidence dossier.',
@@ -371,14 +371,14 @@ export const projects: Project[] = [
     status: 'Open source · MIT',
     featured: true,
     repo: 'https://github.com/Cognifer-Labs/backglass',
-    tech: ['Python', 'FastAPI', 'Pydantic', 'Tauri', 'React', 'TypeScript', 'Anthropic API', 'Google Workspace APIs'],
+    tech: ['Python', 'FastAPI', 'Pydantic', 'Tauri', 'Rust', 'Svelte', 'TypeScript', 'Anthropic API', 'Google Workspace APIs'],
     highlights: [
       'Deterministic ingest-time extraction instead of runtime vector search — known queries computed once, not chat/RAG',
       'Sends a two-minute morning brief at 06:00 and serves a live dashboard; scheduling engine plans the day against real capacity',
       'No automatic calendar writes — every proposed change requires explicit accept',
       'MIT-licensed, single-user, no account and no hosted service; text only leaves the machine via the model backend the user configures',
       'Keeps a personal fact base with a supersession history and serves it read-only to other AI agents over an MCP server',
-      '184 Python modules, 18 source connectors, 3,200+ tests gated by pytest + mypy + ruff, plus a Tauri + React desktop shell',
+      '188 Python modules, 18 source connectors, 4,600+ tests gated by pytest + mypy + ruff, plus a Tauri desktop app in Rust and Svelte',
     ],
   },
   {
@@ -394,7 +394,7 @@ export const projects: Project[] = [
       'Money is never a float: Decimal in Python, integer cents in SQLite, and a trigger that rejects a REAL column',
       'News is an unsigned uncertainty signal — it can shrink an allocation, never enlarge or forecast one',
       'Measures risk (concentration, correlation, worst-month cost) and forecasts no return',
-      '66 Python modules, 2,300+ tests',
+      '129 Python modules, 7,600+ tests',
     ],
   },
 ];
